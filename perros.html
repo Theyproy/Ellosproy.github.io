@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuidado perros</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f8f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #5a9db9;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .section {
+            width: 90%;
+            max-width: 600px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 15px;
+            padding: 20px;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #5a9db9;
+        }
+
+        .raza-container {
+            margin-bottom: 20px;
+        }
+
+        .raza-container img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+            display: block;
+            margin: 10px auto;
+        }
+
+        .raza-container button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #5a9db9;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .info {
+            display: none;
+            margin-top: 10px;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        #scrollTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #5a9db9;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+            font-size: 16px;
+            display: none; /* Oculto inicialmente */
+        }
+
+        #scrollTop:hover {
+            background-color: #4a8ca6;
+        }
+    </style>
+    <script>
+        function toggleInfo(id) {
+            const info = document.getElementById(id);
+            if (info.style.display === 'none' || info.style.display === '') {
+                info.style.display = 'block';
+            } else {
+                info.style.display = 'none';
+            }
+        }
+
+        // Mostrar el botón al desplazarse
+        window.addEventListener('scroll', function () {
+            const scrollTopBtn = document.getElementById('scrollTop');
+            if (window.scrollY > 200) {
+                scrollTopBtn.style.display = 'block';
+            } else {
+                scrollTopBtn.style.display = 'none';
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Cuidado de Perros y Gatos</h1>
+        <p>Guía para el cuidado de algunas razas comunes</p>
+    </header>
+
+    <div class="container">
+        <!-- Sección de Perros -->
+        <section class="section">
+            <h2>Perros</h2>
+
+            <!-- Chihuahua -->
+            <div class="raza-container">
+                <h3>Chihuahua</h3>
+                <img src="https://www.purina.es/sites/default/files/2021-02/BREED%20Hero_0034_chihuahua_smooth.jpg" alt="Chihuahua">
+                <button onclick="toggleInfo('infoChihuahua')">Ver más</button>
+                <div class="info" id="infoChihuahua">
+                        <ul>
+Los chihuahuas son una raza pequeña con grandes personalidades, y cuidarlos bien requiere tener en cuenta algunos aspectos específicos de su salud, ejercicio, alimentación, y socialización. Aquí tienes una guía completa:
+<br><br>
+<h2>1. Alimentación</h2>
+    <ul>
+        <li><strong>Cantidad y frecuencia:</strong> Los chihuahuas tienen un estómago pequeño, así que es mejor alimentarlos en pequeñas porciones dos o tres veces al día.</li>
+        <li><strong>Calidad:</strong> Busca comida de alta calidad diseñada para perros de raza pequeña; evita los alimentos con subproductos o rellenos como maíz y soja.</li>
+        <li><strong>Evita la obesidad:</strong> Tienden a ganar peso fácilmente, lo cual puede ser perjudicial para sus articulaciones y su salud en general. Controla las porciones y evita darle demasiados premios.</li>
+    </ul>
+
+    <h2>2. Ejercicio</h2>
+    <ul>
+        <li><strong>Rutina diaria:</strong> A pesar de su tamaño, necesitan ejercicio diario para mantenerse saludables y quemar energía. Un paseo corto de 15-30 minutos y sesiones de juego en casa son suficientes.</li>
+        <li><strong>Estimulación mental:</strong> Los chihuahuas son perros inteligentes que se benefician de juguetes interactivos y juegos de entrenamiento.</li>
+    </ul>
+
+    <h2>3. Temperatura y clima</h2>
+    <ul>
+        <li><strong>Sensibles al frío:</strong> Tienen poco tejido adiposo y se enfrían fácilmente, especialmente en climas fríos o húmedos. Usa suéteres o abrigos en invierno y mantén su cama en un lugar cálido.</li>
+        <li><strong>Calor extremo:</strong> También son sensibles al calor, así que evita exponerlos al sol directo o paseos en las horas más calurosas.</li>
+    </ul>
+
+    <h2>4. Salud</h2>
+    <ul>
+        <li><strong>Dentición:</strong> Los chihuahuas son propensos a problemas dentales, por lo que es importante cepillarles los dientes regularmente y usar premios que ayuden a mantener su salud bucal.</li>
+        <li><strong>Luxación de rótula:</strong> La dislocación de la rótula es común en esta raza. Evita que salten de alturas altas o se lesionen.</li>
+        <li><strong>Problemas cardíacos y colapso traqueal:</strong> Estas son condiciones comunes en la raza; mantener un peso saludable y hacer revisiones veterinarias es esencial.</li>
+    </ul>
+
+    <h2>5. Cuidado del pelaje</h2>
+    <ul>
+        <li><strong>Cepillado regular:</strong> Tanto los chihuahuas de pelo corto como los de pelo largo se benefician de un cepillado semanal para mantener su pelaje en buen estado y reducir el desprendimiento.</li>
+        <li><strong>Baños:</strong> Un baño mensual o cada seis semanas es suficiente; evita bañarlos en exceso, ya que puede resecar su piel.</li>
+    </ul>
+
+    <h2>6. Socialización y comportamiento</h2>
+    <ul>
+        <li><strong>Socialización temprana:</strong> Los chihuahuas pueden ser territoriales y protectores. La socialización con otros perros y personas desde temprana edad ayudará a reducir la agresividad y la ansiedad.</li>
+        <li><strong>Tendencia a ladrar:</strong> Son propensos a ladrar, especialmente si están aburridos o sienten que necesitan proteger a sus dueños. Entrenarlos para manejar esta conducta es importante.</li>
+        <li><strong>Independencia:</strong> Aunque son perros pequeños, los chihuahuas pueden tener un carácter independiente, pero también suelen apegarse mucho a sus dueños.</li>
+    </ul>
+
+    <h2>7. Cuidado general y visitas al veterinario</h2>
+    <ul>
+        <li><strong>Visitas regulares al veterinario:</strong> Las vacunas, las desparasitaciones y chequeos anuales son necesarios para prevenir enfermedades comunes.</li>
+        <li><strong>Microchip y collar con identificación:</strong> Al ser una raza pequeña y ágil, es importante que siempre tengan una identificación en caso de que se extravíen.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Pitbull -->
+            <div class="raza-container">
+                <h3>Pitbull</h3>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjnrnHlb3SKpu7aXJT10694foEcNv-UDF94JdahiYFy1EZLRlhdmsQPBRZ&s=10" alt="Pitbull">
+                <button onclick="toggleInfo('infoPitbull')">Ver más</button>
+                <div class="info" id="infoPitbull" style="display:none;">
+                    <h3>Pitbull</h3>
+                    <ul>
+                        <li>Ejercicio diario: Son muy activos, así que requieren actividad intensa (juegos, correr).</li>
+                        <li>Entrenamiento y socialización temprana: Para evitar comportamientos agresivos, necesitan entrenamiento constante y contacto con otros perros y personas.</li>
+                        <li>Alimentación de alta calidad: Necesitan una dieta rica en proteínas y equilibrada.</li>
+                        <li>Cuidado de la piel: Son propensos a problemas cutáneos, por lo que hay que revisar su piel frecuentemente.</li>
+                        <li>Espacio y estimulación mental: Son perros fuertes y requieren espacio para moverse y actividades para mantener su mente activa.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Mestizos -->
+            <div class="raza-container">
+                <h3>Mestizos</h3>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFaSmqyeuRTXHcPwqeR44Vs9MTP21ycPf3AZ8bnF2S9lbF8qoeHBK49lTy&s=10" alt="Mestizos">
+                <button onclick="toggleInfo('infoMestizos')">Ver más</button>
+                <div class="info" id="infoMestizos" style="display:none;">
+                    <h3>Mestizos</h3>
+                    <ul>
+                        <li>Ejercicio adecuado: Las necesidades varían, pero en general requieren paseos y actividad.</li>
+                        <li>Atención veterinaria regular: Al ser una mezcla de razas, necesitan chequeos para prevenir problemas de salud.</li>
+                        <li>Dieta equilibrada: No tienen requerimientos específicos, pero una dieta balanceada es clave.</li>
+                        <li>Cepillado: Dependiendo de su tipo de pelo, algunos mestizos necesitan cepillado frecuente.</li>
+                        <li>Socialización: Como con cualquier perro, la socialización es importante para un buen comportamiento.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Pugs -->
+            <div class="raza-container">
+                <h3>Pugs</h3>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRojpyJMeCWU1e_DRy9_M1yhZCJeu_YToMDioXroLgKXhC1g62Q2mtn3CU&s=10" alt="Pugs">
+                <button onclick="toggleInfo('infoPugs')">Ver más</button>
+                <div class="info" id="infoPugs" style="display:none;">
+                    <h3>Pugs</h3>
+                    <ul>
+                        <li>Ejercicio moderado: Evita el ejercicio en climas calurosos, ya que tienen problemas respiratorios.</li>
+                        <li>Cuidado de pliegues: Limpia sus pliegues faciales regularmente para evitar infecciones.</li>
+                        <li>Dieta controlada: Son propensos a la obesidad, así que limita las porciones.</li>
+                        <li>Ambiente fresco: Necesitan vivir en ambientes frescos y ventilados por su sensibilidad al calor.</li>
+                        <li>Cuidado de ojos: Sus ojos saltones son delicados, así que revisa cualquier signo de irritación o lesión.</li>
+                    </ul>
+                </div>
+             </div>
+             
+             <!-- Schnauzer -->
+            <div class="raza-container">
+                <h3>Schnauzer</h3>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaX_jEL6Nn2-nYWGOD-SKtgc_W-6Oqdmg9-1VL_TTjglwvXNBz5RrD5b2O&s=10" alt="Schnauzer">
+                <button onclick="toggleInfo('infoSchnauzer')">Ver más</button>
+                <div class="info" id="infoSchnauzer" style="display:none;">
+                    <h3>Schnauzer</h3>
+                    <ul>
+                        <li>Cepillado frecuente: Su pelaje necesita cepillado regular para evitar enredos.</li>
+                        <li>Ejercicio diario: Son enérgicos y disfrutan de paseos y juegos diarios.</li>
+                        <li>Cuidado de oídos: Limpia sus oídos frecuentemente para prevenir infecciones.</li>
+                        <li>Corte de pelo: Requieren un corte de pelo cada 4-6 semanas para mantener su apariencia.</li>
+                        <li>Entrenamiento constante: Son inteligentes y pueden aburrirse, así que necesitan estimulación mental y física.</li>
+                    </ul>
+                </div>
+             </div>
+             <br>
+             </section>
+             </ul>
+           </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal" onclick="closeModal()">
+        <div class="modal-content" id="modalContent">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+        </div>
+    </div>
+<button id="scrollTop" onclick="scrollToTop()">Subir ↑</button>
+    <footer>
+        <p>&copy;     2024 PetBloom. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuidado de Gatos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f8f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #5a9db9;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .section {
+            width: 90%;
+            max-width: 600px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 15px;
+            padding: 20px;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #5a9db9;
+        }
+
+        .raza-container {
+            margin-bottom: 20px;
+        }
+
+        .raza-container img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+            display: block;
+            margin: 10px auto;
+        }
+
+        .raza-container button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #5a9db9;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .info {
+            display: none;
+            margin-top: 10px;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        #scrollTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #5a9db9;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+            font-size: 16px;
+            display: none; /* Oculto inicialmente */
+        }
+
+        #scrollTop:hover {
+            background-color: #4a8ca6;
+        }
+    </style>
+    <script>
+        function toggleInfo(id) {
+            const info = document.getElementById(id);
+            if (info.style.display === 'none' || info.style.display === '') {
+                info.style.display = 'block';
+            } else {
+                info.style.display = 'none';
+            }
+        }
+
+        // Mostrar el botón al desplazarse
+        window.addEventListener('scroll', function () {
+            const scrollTopBtn = document.getElementById('scrollTop');
+            if (window.scrollY > 200) {
+                scrollTopBtn.style.display = 'block';
+            } else {
+                scrollTopBtn.style.display = 'none';
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Cuidado de Perros y Gatos</h1>
+        <p>Guía para el cuidado de algunas razas comunes</p>
+    </header>
+   
+         <div class="container">
+        <!-- Sección de Gatos -->
+        <section class="section">
+            <h2>Gatos</h2>
+            
+            <!-- Siamés -->
+            <div class="raza-container">
+                <h3>Siamés</h3>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJ4eFR3DPMQ3iwmbVIb6eXR0QqLccL0pqfxVqPlUsSqxRKjgTXu-9r2js&s=10" alt="Siames">
+                <button onclick="toggleInfo('infoSiames')">Ver más</button>
+                <div class="info" id="infoSiames" style="display:none;">
+                    <h3>Siamés</h3>
+                    <ul>
+                        <li>Atención y compañía: Son sociables y disfrutan de la interacción, así que dedica tiempo para jugar con ellos.</li>
+                        <li>Estimulación mental: Son inteligentes y necesitan juguetes o juegos que desafíen su mente.</li>
+                        <li>Ejercicio regular: Disfrutan de saltar y trepar, así que un árbol para gatos es ideal.</li>
+                        <li>Revisión dental: Son propensos a problemas dentales, así que considera cepillar sus dientes o usar juguetes dentales.</li>
+                      <li>Chequeos veterinarios: Suelen ser saludables, pero es importante monitorear su salud con visitas regulares.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Persa -->
+            <div class="raza-container">
+                <h3>Persa</h3>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxkNb1Of6gKvs6UPcTLkFvrBVPvt8iF_RiX6j49mX4JC_75wScYlzfl5cp&s=10" alt="Persa">
+                <button onclick="toggleInfo('infoPersa')">Ver más</button>
+                <div class="info" id="infoPersa" style="display:none;">
+                    <h3>Persa</h3>
+                    <ul>
+                        <li>Cepillado diario: Su pelaje largo necesita cepillado diario para evitar nudos y bolas de pelo.</li>
+                        <li>Limpieza ocular: Tienen ojos grandes y son propensos a lagrimeo, por lo que se recomienda limpiar alrededor de sus ojos.</li>
+                        <li>Ambiente fresco y tranquilo: Son tranquilos y prefieren un ambiente calmado; evita el calor excesivo.</li>
+                        <li>Dieta controlada: Debido a su nivel de actividad bajo, controla su alimentación para evitar la obesidad.</li>
+                      <li>Chequeos regulares: Tienen predisposición a problemas respiratorios y renales, por lo que las visitas veterinarias son importantes.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Maine Coon -->
+            <div class="raza-container">
+                <h3>Maine Coon</h3>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZnO_qbLbNCOgd_M-orWm5m_9kzyUfdhIxoQ&usqp=CAU" alt="Maine">
+                <button onclick="toggleInfo('infoMaine')">Ver más</button>
+                <div class="info" id="infoMaine" style="display:none;">
+                    <h3>Maine Coon</h3>
+                    <ul>
+                        <li>Cepillado semanal: Tienen un pelaje espeso que necesita cepillado semanal para evitar enredos.</li>
+                        <li>Ejercicio y espacio: Son activos y necesitan espacio para moverse y trepar, así como juegos interactivos.</li>
+                        <li>Dieta rica en proteínas: Su tamaño grande requiere una dieta balanceada y rica en proteínas.</li>
+                        <li>Revisión dental y ocular: Son propensos a problemas dentales y oculares, así que revisa su boca y ojos regularmente.</li>
+                      <li>Chequeos cardíacos: Esta raza puede desarrollar problemas cardíacos, por lo que es recomendable hacer revisiones veterinarias frecuentes.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bengala -->
+            <div class="raza-container">
+                <h3>Bengala</h3>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS37TUDrpb3-Sl6CwBZqsXfP1c_EkMU0VHfE4lX6ZWmk3ohh2bd7nMke55I&s=10" alt="Bengala">
+                <button onclick="toggleInfo('infoBengala')">Ver más</button>
+                <div class="info" id="infoBengala" style="display:none;">
+                    <h3>Bengala</h3>
+                    <ul>
+                        <li>Ejercicio intenso: Son muy activos y necesitan bastante ejercicio, como juegos de caza y rascadores altos.</li>
+                        <li>Estimulación mental: Al ser inteligentes, disfrutan de juegos de rompecabezas y juguetes interactivos.</li>
+                        <li>Cepillado ocasional: Su pelaje corto requiere poco cepillado, pero ayuda a mantenerlo brillante.</li>
+                        <li>Socialización: Disfrutan de la compañía humana, así que interactúa con ellos a diario.</li>
+                      <li>Chequeos regulares: Son propensos a problemas gastrointestinales y cardíacos, por lo que las visitas al veterinario son importantes.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Sphynx -->
+            <div class="raza-container">
+                <h3>Sphynx</h3>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtS03nDanUypNbezW2-j1pSYwOcSxYfZ-6jJWP_qXR5b1WUKAl2FmTUtuN&s=10" alt="Sphynx">
+                <button onclick="toggleInfo('infoSphynx')">Ver más</button>
+                <div class="info" id="infoSphynx" style="display:none;">
+                    <h3>Sphynx</h3>
+                    <ul>
+                        <li>Baños regulares: Su piel sin pelo acumula aceites, así que necesitan baños frecuentes para evitar infecciones.</li>
+                        <li>Cuidado de orejas: Limpia sus orejas con regularidad, ya que acumulan cera fácilmente.</li>
+                        <li>Abrigo en climas fríos: Al no tener pelaje, son sensibles al frío y necesitan ropa o mantas en invierno.</li>
+                        <li>Protección solar: En climas cálidos, evita exponerlos al sol directo para prevenir quemaduras.</li>
+                      <li>Chequeos regulares: Son propensos a problemas cardíacos, así que las revisiones frecuentes son esenciales.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal" onclick="closeModal()">
+        <div class="modal-content" id="modalContent">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+        </div>
+    </div>
+<button id="scrollTop" onclick="scrollToTop()">Subir ↑</button>
+    <footer>
+        <p>&copy;     2024 PetBloom. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
