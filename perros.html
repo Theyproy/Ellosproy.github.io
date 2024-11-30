@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cuidado perros</title>
+    <title>Cuidado de Perros y Gatos</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -67,61 +67,83 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            transition: all 0.3s ease;
         }
 
-        .info {
+        .raza-container button:hover {
+            background-color: #4a8ca0;
+            transform: scale(1.05);
+        }
+
+        .raza-container button:active {
+            transform: scale(0.95);
+        }
+
+        .raza-container .info {
             display: none;
             margin-top: 10px;
-            animation: fadeIn 0.5s ease-out;
+        }
+
+        .raza-container .info ul {
+            padding-left: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #5a9db9;
+            color: white;
+        }
+
+        .scroll-top-btn, .external-link-btn {
+            display: block;
+            width: 80%;
+            max-width: 300px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #5a9db9;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .scroll-top-btn:hover, .external-link-btn:hover {
+            background-color: #4a8ca0;
+            transform: scale(1.05);
+        }
+
+        .scroll-top-btn:active, .external-link-btn:active {
+            transform: scale(0.95);
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease forwards;
         }
 
         @keyframes fadeIn {
             from {
                 opacity: 0;
+                transform: translateY(-20px);
             }
             to {
                 opacity: 1;
+                transform: translateY(0);
             }
-        }
-
-        #scrollTop {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            padding: 10px 20px;
-            background-color: #5a9db9;
-            color: white;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
-            font-size: 16px;
-            display: none; /* Oculto inicialmente */
-        }
-
-        #scrollTop:hover {
-            background-color: #4a8ca6;
         }
     </style>
     <script>
         function toggleInfo(id) {
             const info = document.getElementById(id);
-            if (info.style.display === 'none' || info.style.display === '') {
-                info.style.display = 'block';
+            if (info.style.display === "none" || !info.style.display) {
+                info.style.display = "block";
+                info.classList.add("fade-in");
             } else {
-                info.style.display = 'none';
+                info.style.display = "none";
+                info.classList.remove("fade-in");
             }
         }
-
-        // Mostrar el botón al desplazarse
-        window.addEventListener('scroll', function () {
-            const scrollTopBtn = document.getElementById('scrollTop');
-            if (window.scrollY > 200) {
-                scrollTopBtn.style.display = 'block';
-            } else {
-                scrollTopBtn.style.display = 'none';
-            }
-        });
 
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -135,148 +157,591 @@
     </header>
 
     <div class="container">
-        <!-- Sección de Perros -->
         <section class="section">
             <h2>Perros</h2>
+        
+                    <!-- Chihuahua -->
+                    <div class="raza-container">
+                        <h3>Chihuahua</h3>
+                        <img src="https://www.purina.es/sites/default/files/2021-02/BREED%20Hero_0034_chihuahua_smooth.jpg" alt="Chihuahua">
+                        <button onclick="toggleInfo('infoChihuahua')">Ver más</button>
+                        <div class="info" id="infoChihuahua">
+                                <ul>Los chihuahuas son una raza pequeña con grandes personalidades, y cuidarlos bien requiere tener en cuenta algunos aspectos específicos de su salud, ejercicio, alimentación, y socialización. Aquí tienes una guía completa:
+        <br><br>
+        <h2>1. Alimentación</h2>
+            <ul>
+                <li><strong>Cantidad y frecuencia:</strong> Los chihuahuas tienen un estómago pequeño, así que es mejor alimentarlos en pequeñas porciones dos o tres veces al día.</li>
+                <li><strong>Calidad:</strong> Busca comida de alta calidad diseñada para perros de raza pequeña; evita los alimentos con subproductos o rellenos como maíz y soja.</li>
+                <li><strong>Evita la obesidad:</strong> Tienden a ganar peso fácilmente, lo cual puede ser perjudicial para sus articulaciones y su salud en general. Controla las porciones y evita darle demasiados premios.</li>
+            </ul>
+        
+            <h2>2. Ejercicio</h2>
+            <ul>
+                <li><strong>Rutina diaria:</strong> A pesar de su tamaño, necesitan ejercicio diario para mantenerse saludables y quemar energía. Un paseo corto de 15-30 minutos y sesiones de juego en casa son suficientes.</li>
+                <li><strong>Estimulación mental:</strong> Los chihuahuas son perros inteligentes que se benefician de juguetes interactivos y juegos de entrenamiento.</li>
+            </ul>
+        
+            <h2>3. Temperatura y clima</h2>
+            <ul>
+                <li><strong>Sensibles al frío:</strong> Tienen poco tejido adiposo y se enfrían fácilmente, especialmente en climas fríos o húmedos. Usa suéteres o abrigos en invierno y mantén su cama en un lugar cálido.</li>
+                <li><strong>Calor extremo:</strong> También son sensibles al calor, así que evita exponerlos al sol directo o paseos en las horas más calurosas.</li>
+            </ul>
+        
+            <h2>4. Salud</h2>
+            <ul>
+                <li><strong>Dentición:</strong> Los chihuahuas son propensos a problemas dentales, por lo que es importante cepillarles los dientes regularmente y usar premios que ayuden a mantener su salud bucal.</li>
+                <li><strong>Luxación de rótula:</strong> La dislocación de la rótula es común en esta raza. Evita que salten de alturas altas o se lesionen.</li>
+                <li><strong>Problemas cardíacos y colapso traqueal:</strong> Estas son condiciones comunes en la raza; mantener un peso saludable y hacer revisiones veterinarias es esencial.</li>
+            </ul>
+        
+            <h2>5. Cuidado del pelaje</h2>
+            <ul>
+                <li><strong>Cepillado regular:</strong> Tanto los chihuahuas de pelo corto como los de pelo largo se benefician de un cepillado semanal para mantener su pelaje en buen estado y reducir el desprendimiento.</li>
+                <li><strong>Baños:</strong> Un baño mensual o cada seis semanas es suficiente; evita bañarlos en exceso, ya que puede resecar su piel.</li>
+            </ul>
+        
+            <h2>6. Socialización y comportamiento</h2>
+            <ul>
+                <li><strong>Socialización temprana:</strong> Los chihuahuas pueden ser territoriales y protectores. La socialización con otros perros y personas desde temprana edad ayudará a reducir la agresividad y la ansiedad.</li>
+                <li><strong>Tendencia a ladrar:</strong> Son propensos a ladrar, especialmente si están aburridos o sienten que necesitan proteger a sus dueños. Entrenarlos para manejar esta conducta es importante.</li>
+                <li><strong>Independencia:</strong> Aunque son perros pequeños, los chihuahuas pueden tener un carácter independiente, pero también suelen apegarse mucho a sus dueños.</li>
+            </ul>
+        
+            <h2>7. Cuidado general y visitas al veterinario</h2>
+            <ul>
+                <li><strong>Visitas regulares al veterinario:</strong> Las vacunas, las desparasitaciones y chequeos anuales son necesarios para prevenir enfermedades comunes.</li>
+                <li><strong>Microchip y collar con identificación:</strong> Al ser una raza pequeña y ágil, es importante que siempre tengan una identificación en caso de que se extravíen.</li>
+                            </ul>
+                        </div>
+                    </div>
 
-            <!-- Chihuahua -->
-            <div class="raza-container">
-                <h3>Chihuahua</h3>
-                <img src="https://www.purina.es/sites/default/files/2021-02/BREED%20Hero_0034_chihuahua_smooth.jpg" alt="Chihuahua">
-                <button onclick="toggleInfo('infoChihuahua')">Ver más</button>
-                <div class="info" id="infoChihuahua">
-                        <ul>
-Los chihuahuas son una raza pequeña con grandes personalidades, y cuidarlos bien requiere tener en cuenta algunos aspectos específicos de su salud, ejercicio, alimentación, y socialización. Aquí tienes una guía completa:
-<br><br>
-<h2>1. Alimentación</h2>
+                    <!-- Beagle -->
+                    <div class="raza-container">
+                        <h3>Beagle</h3>
+                        <img src="https://www.zooplus.es/magazine/wp-content/uploads/2017/10/Beagle-1.jpg" alt="Beagle">
+                        <button onclick="toggleInfo('infoBeagle')">Ver más</button>
+                        <div class="info" id="infoBeagle">
+                            <h3>Edad</h3>
+                            <p>Esperanza de vida entre 12 y 15 años.</p>
+                        
+                            <h2>Alimentación de calidad</h2>
+                            <p>Es importante proporcionar una dieta adecuada:</p>
+                            <ul>
+                                <li>Rica en proteínas magras como pollo y pavo</li>
+                                <li>Carbohidratos complejos en cantidades moderadas</li>
+                                <li>Control estricto de las porciones para evitar el sobrepeso</li>
+                            </ul>
+                        
+                            <h2>Educación animal</h2>
+                            <p>El Beagle requiere un entrenamiento especial debido a su carácter:</p>
+                            <ul>
+                                <li>Inteligentes pero tercos, necesitan consistencia</li>
+                                <li>Entrenamiento basado en refuerzo positivo</li>
+                                <li>Disfrutan juegos que estimulan su sentido del olfato</li>
+                            </ul>
+                        
+                            <h2>Higiene</h2>
+                            <p>El mantenimiento regular es crucial para la salud del Beagle:</p>
+                            <ul>
+                                <li>Cepillado semanal para mantener el pelaje limpio</li>
+                                <li>Limpieza frecuente de sus orejas largas para prevenir infecciones</li>
+                                <li>Limpieza dental frecuente para evitar acumulación de sarro</li>
+                            </ul>
+                        
+                            <h2>Paseo y actividad física</h2>
+                            <p>El Beagle es una raza activa que necesita ejercicio diario:</p>
+                            <ul>
+                                <li>Al menos una hora diaria de ejercicio</li>
+                                <li>Disfrutan de largas caminatas y juegos de rastreo</li>
+                                <li>El ejercicio regular ayuda a mantenerlos en forma y felices</li>
+                            </ul>
+                        
+                            <h2>Atención y cuidados veterinarios</h2>
+                            <p>Revisiones frecuentes son esenciales para prevenir problemas comunes:</p>
+                            <ul>
+                                <li>Propensos a infecciones de oído, por lo que se requiere atención regular</li>
+                                <li>Vigilancia constante del peso debido a su tendencia a la obesidad</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Golden Retriever -->
+                    <div class="raza-container">
+                        <h3>Golden Retriever</h3>
+                        <img src="https://static.wixstatic.com/media/34e812_826572739aa14ecaa00291399634f9f1~mv2.jpg/v1/fill/w_1000,h_1000,al_c,q_85,usm_0.66_1.00_0.01/34e812_826572739aa14ecaa00291399634f9f1~mv2.jpg" alt="Golden">
+                        <button onclick="toggleInfo('infoGolden')">Ver más</button>
+                        <div class="info" id="infoGolden">
+                            <h3>Edad</h3>
+                            <p>Esperanza de vida entre 10 y 12 años.</p>
+                        
+                            <h2>Alimentación de calidad</h2>
+                            <p>Requieren una dieta equilibrada para mantenerse saludables:</p>
+                            <ul>
+                                <li>Proteínas de alta calidad como pollo, cordero y pescado</li>
+                                <li>Grasas saludables para mantener un pelaje brillante</li>
+                                <li>Suplementos de glucosamina y ácidos grasos omega-3 para articulaciones y piel</li>
+                            </ul>
+                        
+                            <h2>Educación animal</h2>
+                            <p>Son perros inteligentes y fáciles de entrenar:</p>
+                            <ul>
+                                <li>Responden muy bien al refuerzo positivo</li>
+                                <li>Disfrutan aprender nuevos trucos y actividades</li>
+                                <li>Ideales para trabajos de asistencia o búsqueda</li>
+                            </ul>
+                        
+                            <h2>Higiene</h2>
+                            <p>Requieren cuidados regulares para mantener su pelaje en buen estado:</p>
+                            <ul>
+                                <li>Cepillado frecuente, al menos dos veces por semana</li>
+                                <li>Baños cada 6-8 semanas o según sea necesario</li>
+                                <li>Limpieza de oídos regular</li>
+                            </ul>
+                        
+                            <h2>Paseo y actividad física</h2>
+                            <p>Son perros activos que necesitan ejercicio diario:</p>
+                            <ul>
+                                <li>De 1 a 2 horas de actividad física al día</li>
+                                <li>Disfrutan de largas caminatas, nadar y jugar a la pelota</li>
+                            </ul>
+                            <p>Sin suficiente actividad, pueden desarrollar problemas de comportamiento.</p>
+                        
+                            <h2>Atención y cuidados veterinarios</h2>
+                            <p>Es importante realizar revisiones periódicas para prevenir y controlar problemas comunes en la raza:</p>
+                            <ul>
+                                <li>Displasia de cadera y codo</li>
+                                <li>Problemas cardíacos</li>
+                                <li>Cáncer, ya que es una raza predispuesta a estos trastornos</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Bulldog Francés -->
+                    <div class="raza-container">
+                        <h3>Bulldog Frances</h3>
+                        <img src="https://www.frenchie.shop/cdn/shop/articles/french-bulldog-277255_1920.jpg?v=1634346872" alt="Bulldog">
+                        <button onclick="toggleInfo('infoBulldog')">Ver más</button>
+                        <div class="info" id="infoBulldog">
+                            <h3>Edad</h3>
+                            <p>Esperanza de vida entre 10 y 12 años.</p>
+                        
+                            <h2>Alimentación de calidad</h2>
+                            <p>Requieren una dieta específica debido a su tendencia a la obesidad:</p>
+                            <ul>
+                                <li>Alimentos bajos en grasas</li>
+                                <li>Proteínas de alta calidad, como pollo o pescado</li>
+                                <li>Moderadas cantidades de carbohidratos</li>
+                            </ul>
+                            <p>Es importante evitar sobrealimentarlos, ya que son propensos a ganar peso rápidamente.</p>
+                        
+                            <h2>Educación animal</h2>
+                            <p>Son perros testarudos pero inteligentes. Recomendaciones:</p>
+                            <ul>
+                                <li>Entrenamiento basado en la paciencia y el refuerzo positivo</li>
+                                <li>Socialización desde cachorros para evitar problemas de comportamiento</li>
+                            </ul>
+                        
+                            <h2>Higiene</h2>
+                            <p>Requieren cuidados regulares:</p>
+                            <ul>
+                                <li>Cepillado semanal</li>
+                                <li>Limpieza regular de los pliegues faciales para evitar infecciones cutáneas</li>
+                                <li>Limpieza de oídos frecuente</li>
+                                <li>Baños mensuales o según sea necesario</li>
+                            </ul>
+                        
+                            <h2>Paseo y actividad física</h2>
+                            <p>Necesitan actividad física moderada:</p>
+                            <ul>
+                                <li>Around 30-45 minutos al día</li>
+                                <li>Caminatas suaves y juego en espacios controlados</li>
+                            </ul>
+                            <p>No toleran bien el ejercicio extenuante debido a sus problemas respiratorios.</p>
+                        
+                            <h2>Atención y cuidados veterinarios</h2>
+                            <p>Es importante:</p>
+                            <ul>
+                                <li>Realizar chequeos regulares para prevenir problemas respiratorios, oculares y de piel</li>
+                                <li>Monitorear su peso</li>
+                                <li>Evitar que hagan ejercicio en condiciones de calor extremo debido a su dificultad para respirar</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Pitbull -->
+                    <div class="raza-container">
+                        <h3>Pitbull</h3>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjnrnHlb3SKpu7aXJT10694foEcNv-UDF94JdahiYFy1EZLRlhdmsQPBRZ&s=10" alt="Pitbull">
+                        <button onclick="toggleInfo('infoPitbull')">Ver más</button>
+                        <div class="info" id="infoPitbull" style="display:none;">
+                            <p>
+                                Los pitbulls son perros fuertes, inteligentes y leales que, con el cuidado adecuado, pueden ser excelentes compañeros. Aquí tienes una guía completa para su cuidado:
+                            </p>
+                        
+                            <h2>1. Alimentación</h2>
+                            <ul>
+                                <li><strong>Dieta balanceada:</strong> Los pitbulls requieren una dieta rica en proteínas y grasas saludables para mantener sus músculos y energía. Busca alimentos de alta calidad, preferentemente con carne como ingrediente principal.</li>
+                                <li><strong>Cantidad y control de peso:</strong> Dividir su ración en dos comidas al día ayuda a mantener su metabolismo equilibrado y previene el riesgo de sobrepeso. Un pitbull con sobrepeso es más propenso a problemas de salud como la displasia de cadera.</li>
+                            </ul>
+                        
+                            <h2>2. Ejercicio y actividad</h2>
+                            <ul>
+                                <li><strong>Ejercicio diario:</strong> Los pitbulls son una raza atlética que necesita ejercicio regular. Asegúrate de que hagan al menos una hora de ejercicio al día, como correr, jugar, o practicar deportes como el agility o el canicross.</li>
+                                <li><strong>Juegos de estimulación mental:</strong> Son perros inteligentes que se benefician de juegos que desafíen su mente, como juguetes interactivos o rompecabezas. Esto reduce el aburrimiento y ayuda a prevenir conductas destructivas.</li>
+                            </ul>
+                        
+                            <h2>3. Entrenamiento y socialización</h2>
+                            <ul>
+                                <li><strong>Entrenamiento desde cachorro:</strong> Los pitbulls responden bien al entrenamiento positivo. Comienza a enseñarles órdenes básicas desde cachorros para que entiendan límites y normas de convivencia.</li>
+                                <li><strong>Socialización temprana:</strong> La socialización es clave para esta raza. Exponerlos a diferentes personas, perros, y situaciones de forma gradual y positiva ayuda a reducir el riesgo de agresividad por miedo o ansiedad.</li>
+                                <li><strong>Refuerzo positivo:</strong> La paciencia y el uso de premios al reforzar buenos comportamientos son esenciales para entrenarlos.</li>
+                            </ul>
+                        
+                            <h2>4. Cuidado del pelaje y aseo</h2>
+                            <ul>
+                                <li><strong>Cepillado semanal:</strong> Su pelaje corto es fácil de mantener, pero un cepillado semanal ayudará a eliminar el pelo suelto y mantenerlo brillante.</li>
+                                <li><strong>Baños ocasionales:</strong> No necesitan baños frecuentes; un baño cada 1-2 meses es suficiente, a menos que se ensucien mucho. Usa champús suaves para perros para no dañar su piel.</li>
+                            </ul>
+                        
+                            <h2>5. Salud y revisiones veterinarias</h2>
+                            <ul>
+                                <li><strong>Predisposición a alergias:</strong> Los pitbulls suelen ser propensos a alergias de piel. Esto puede incluir sensibilidad a ciertos alimentos o factores ambientales como el polvo o el polen. Consulta al veterinario si notas irritación, picazón, o enrojecimiento.</li>
+                                <li><strong>Displasia de cadera y problemas articulares:</strong> Esta raza es susceptible a problemas en las articulaciones, especialmente a medida que envejecen. Mantener un peso saludable y realizar ejercicio adecuado reduce el riesgo.</li>
+                                <li><strong>Chequeos regulares:</strong> Las revisiones veterinarias periódicas son importantes para detectar a tiempo problemas de salud.</li>
+                            </ul>
+                        
+                            <h2>6. Temperamento y socialización con otros perros</h2>
+                            <ul>
+                                <li><strong>Naturaleza protectora:</strong> Los pitbulls suelen ser muy leales y protectores con sus familias, pero requieren socialización adecuada para llevarse bien con otros animales.</li>
+                                <li><strong>Supervisión en encuentros con otros perros:</strong> Si bien muchos pitbulls son amigables con otros perros, algunos pueden mostrar comportamientos territoriales o dominantes. Supervisar los juegos con otros perros es recomendable, sobre todo si no están familiarizados.</li>
+                            </ul>
+                        
+                            <h2>7. Cuidado dental y de uñas</h2>
+                            <ul>
+                                <li><strong>Cuidado dental:</strong> El cepillado de dientes regular ayuda a prevenir la acumulación de sarro y problemas dentales. También puedes darles juguetes masticables seguros para ayudar con el cuidado dental.</li>
+                                <li><strong>Recorte de uñas:</strong> Corta sus uñas cada pocas semanas o cuando notes que se escuchan al caminar. Esto evita molestias o lesiones.</li>
+                            </ul>
+                        
+                            <h2>8. Vivienda y ambiente</h2>
+                            <ul>
+                                <li><strong>Espacio suficiente:</strong> Aunque se adaptan a vivir en departamentos si tienen suficiente ejercicio, prefieren vivir en espacios donde puedan moverse y jugar.</li>
+                                <li><strong>Tiempo con la familia:</strong> Los pitbulls son perros afectuosos y disfrutan mucho el tiempo en compañía de su familia. No deben dejarse solos por períodos largos, ya que pueden desarrollar ansiedad por separación.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Mestizos -->
+                    <div class="raza-container">
+                        <h3>Mestizos</h3>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFaSmqyeuRTXHcPwqeR44Vs9MTP21ycPf3AZ8bnF2S9lbF8qoeHBK49lTy&s=10" alt="Mestizos">
+                        <button onclick="toggleInfo('infoMestizos')">Ver más</button>
+                        <div class="info" id="infoMestizos" style="display:none;">
+                            <ul>
+                                <p>
+                                    Los perros mestizos son conocidos por su resistencia, versatilidad y personalidades únicas. Su cuidado se asemeja al de cualquier otro perro, pero algunos aspectos específicos pueden variar dependiendo de su tamaño, tipo de pelaje, y nivel de actividad. Aquí tienes una guía completa para su cuidado:
+                                </p>
+                            
+                                <h2>1. Alimentación</h2>
+                                <ul>
+                                    <li><strong>Dieta equilibrada:</strong> Los perros mestizos necesitan una dieta adecuada a su tamaño, edad y nivel de actividad. Opta por comida de calidad que incluya proteínas, grasas saludables, carbohidratos, vitaminas y minerales.</li>
+                                    <li><strong>Cantidad y control de peso:</strong> La cantidad de comida varía según el tamaño del perro. Dividir la ración diaria en dos o tres comidas ayuda a mantenerlos satisfechos y en buen estado de salud. Los mestizos pueden ser propensos a la obesidad si no se controla su alimentación, así que evita sobrealimentarlos.</li>
+                                    <li><strong>Evita los alimentos peligrosos:</strong> Nunca les des chocolate, uvas, cebolla, ajo, ni alimentos procesados para humanos, ya que pueden ser tóxicos para los perros.</li>
+                                </ul>
+                            
+                                <h2>2. Ejercicio y actividad</h2>
+                                <ul>
+                                    <li><strong>Rutina de ejercicio diaria:</strong> Los perros mestizos necesitan una cantidad de ejercicio adecuada a su tamaño y energía. Para perros pequeños y menos activos, paseos diarios y tiempo de juego en casa pueden ser suficientes. Los perros más grandes y enérgicos pueden requerir caminatas largas y actividades más intensas, como correr o juegos de búsqueda.</li>
+                                    <li><strong>Estimulación mental:</strong> La estimulación mental es importante para evitar el aburrimiento, que puede llevar a comportamientos destructivos. Los juguetes interactivos, juegos de olfato y entrenamiento de órdenes básicas mantienen su mente activa y saludable.</li>
+                                </ul>
+                            
+                                <h2>3. Cuidado del pelaje</h2>
+                                <ul>
+                                    <li><strong>Cepillado regular:</strong> El tipo de pelaje varía en los mestizos, así que ajusta la frecuencia de cepillado a sus necesidades. Los perros de pelaje largo requieren más cepillado, mientras que los de pelaje corto pueden necesitar menos, pero un cepillado semanal ayuda a reducir el desprendimiento y mantiene su piel y pelaje saludables.</li>
+                                    <li><strong>Baños según necesidad:</strong> La frecuencia del baño depende de su actividad y tipo de pelaje. En general, un baño cada mes o cada dos meses es suficiente para mantenerlos limpios. Usa un champú adecuado para perros para no irritar su piel.</li>
+                                </ul>
+                            
+                                <h2>4. Salud y visitas al veterinario</h2>
+                                <ul>
+                                    <li><strong>Chequeos regulares:</strong> Aunque los mestizos suelen ser más resistentes a ciertas enfermedades genéticas, necesitan revisiones veterinarias regulares. Llevarlos al veterinario al menos una vez al año es ideal para controlar su salud y actualizar vacunas y desparasitaciones.</li>
+                                    <li><strong>Condiciones específicas:</strong> Los mestizos de ciertas mezclas pueden heredar predisposiciones a enfermedades de sus razas progenitoras. Consulta al veterinario para conocer posibles riesgos en su caso.</li>
+                                    <li><strong>Prevención de pulgas y garrapatas:</strong> Los mestizos, como cualquier perro, necesitan prevención contra parásitos externos. Usa collares, pipetas o pastillas antipulgas y antiparasitarias.</li>
+                                </ul>
+                            
+                                <h2>5. Socialización y entrenamiento</h2>
+                                <ul>
+                                    <li><strong>Socialización desde temprana edad:</strong> Exponer al perro a diferentes personas, lugares y animales desde joven ayuda a evitar problemas de comportamiento y miedo. Los perros mestizos suelen ser amistosos y adaptables, pero la socialización es esencial para desarrollar una buena convivencia.</li>
+                                    <li><strong>Entrenamiento con refuerzo positivo:</strong> Los mestizos, como cualquier perro, responden bien al refuerzo positivo. Usa premios, caricias y palabras de aliento cuando obedezcan, y evita los castigos severos.</li>
+                                    <li><strong>Constancia en las órdenes básicas:</strong> Enseñarles comandos básicos como “sentado”, “quieto” y “ven” ayuda a mantener el control y facilita su manejo en situaciones de paseo o en casa.</li>
+                                </ul>
+                            
+                                <h2>6. Cuidado dental y de uñas</h2>
+                                <ul>
+                                    <li><strong>Cepillado de dientes:</strong> Los perros mestizos también son propensos a problemas dentales si no se cuida su higiene bucal. Cepillar sus dientes regularmente o darles juguetes dentales ayuda a prevenir problemas de encías y acumulación de sarro.</li>
+                                    <li><strong>Recorte de uñas:</strong> Las uñas deben recortarse cuando se escuchen al caminar o si empiezan a incomodarlos. Esto puede ser cada tres semanas o una vez al mes, dependiendo de su crecimiento y actividad.</li>
+                                </ul>
+                            
+                                <h2>7. Atención emocional y tiempo con la familia</h2>
+                                <ul>
+                                    <li><strong>Cariño y tiempo de calidad:</strong> Los perros mestizos suelen ser muy leales y disfrutan pasar tiempo con sus dueños. Dedicarles tiempo de calidad, jugar con ellos y brindarles atención afectiva es esencial para su bienestar emocional.</li>
+                                    <li><strong>Evitar la ansiedad por separación:</strong> Algunos perros mestizos pueden ser propensos a la ansiedad por separación, especialmente si han tenido un pasado difícil. Si es necesario, puedes trabajar con ellos para ayudarlos a sentirse seguros cuando estén solos.</li>
+                                </ul>
+                            
+                                <h2>8. Identificación y seguridad</h2>
+                                <ul>
+                                    <li><strong>Microchip y placa de identificación:</strong> Siempre es recomendable que tengan un microchip y una placa con su nombre y número de contacto. Esto es especialmente importante en perros mestizos que puedan tener tendencia a explorar o a escapar.</li>
+                                </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Pugs -->
+                    <div class="raza-container">
+                        <h3>Pugs</h3>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRojpyJMeCWU1e_DRy9_M1yhZCJeu_YToMDioXroLgKXhC1g62Q2mtn3CU&s=10" alt="Pugs">
+                        <button onclick="toggleInfo('infoPugs')">Ver más</button>
+                        <div class="info" id="infoPugs" style="display:none;">
+                            <ul>
+                                <p>
+                                    Los pugs son una raza de perros cariñosa y amigable que requiere cuidados especiales, especialmente debido a su anatomía única. Aquí tienes una guía completa para cuidar a un pug:
+                                </p>
+        
+                            <h2>1. Alimentación</h2>
+                            <ul>
+                                <li><strong>Dieta balanceada:</strong> Los pugs tienden a ganar peso con facilidad, por lo que es importante darles alimentos de alta calidad en porciones adecuadas. Busca comida rica en proteínas y baja en grasas.</li>
+                                <li><strong>Cantidad y frecuencia:</strong> Alimentarlos en pequeñas porciones dos o tres veces al día ayuda a mantener su energía sin sobrealimentarlos.</li>
+                                <li><strong>Evita la obesidad:</strong> Controlar el peso de un pug es esencial, ya que el sobrepeso aumenta el riesgo de problemas respiratorios y articulares. Evita darle muchas golosinas y limita los alimentos grasos.</li>
+                            </ul>
+                                <h2>2. Ejercicio y actividad</h2>
+                            <ul>
+                                <li><strong>Ejercicio moderado:</strong> A los pugs les gusta jugar, pero se cansan rápidamente debido a su estructura braquicefálica (cara plana). Darles paseos cortos (15-20 minutos) y juegos en casa es suficiente.</li>
+                                <li><strong>Evitar el ejercicio intenso y el calor:</strong> Los pugs son propensos al golpe de calor, ya que tienen dificultades para respirar bien en clima cálido o durante actividades intensas. En climas cálidos, llévalos a pasear en las primeras horas de la mañana o en la noche.</li>
+                            </ul>
+                                <h2>3. Cuidado del pelaje</h2>
+                            <ul>
+                                <li><strong>Cepillado frecuente:</strong> Los pugs mudan mucho pelo a pesar de tener pelaje corto. Cepillarlos al menos una vez a la semana ayuda a reducir el desprendimiento y mantiene su piel saludable.</li>
+                                <li><strong>Baños según necesidad:</strong> Bañarlos una vez al mes o cada seis semanas es suficiente. Usa un champú suave para perros, ya que los pugs tienen la piel sensible.</li>
+                            </ul>
+                                <h2>4. Cuidado facial y de las arrugas</h2>
+                            <ul>
+                                <li><strong>Limpieza diaria de las arrugas:</strong> Los pugs tienen pliegues faciales que pueden acumular humedad y suciedad, lo que puede provocar infecciones. Limpia sus arrugas diariamente con una toalla húmeda o un paño suave y asegúrate de secarlas bien.</li>
+                                <li><strong>Cuidado de los ojos:</strong> Sus ojos prominentes son susceptibles a lesiones y sequedad. Mantente atento a signos de irritación, enrojecimiento o secreción, y consulta al veterinario si es necesario.</li>
+                            </ul>
+                                <h2>5. Salud y visitas al veterinario</h2>
+                            <ul>
+                                <li><strong>Problemas respiratorios:</strong> La estructura facial de los pugs puede causar dificultades respiratorias. Es importante evitar exponerlos a climas extremos y observar si tienen ronquidos fuertes o dificultad para respirar.</li>
+                                <li><strong>Problemas oculares:</strong> Sus ojos saltones son más propensos a lesiones y úlceras. Revisa sus ojos regularmente y consulta al veterinario si notas cualquier problema.</li>
+                                <li><strong>Chequeos regulares:</strong> Las visitas veterinarias son esenciales para monitorear su salud, mantener sus vacunas y prevenir enfermedades comunes. Esto es particularmente importante en una raza propensa a problemas respiratorios y de piel.</li>
+                            </ul>
+                                <h2>6. Socialización y entrenamiento</h2>
+                            <ul>
+                                <li><strong>Socialización temprana:</strong> Los pugs son amigables por naturaleza, pero aún necesitan socialización temprana con otros perros y personas para desarrollar buenos modales.</li>
+                                <li><strong>Entrenamiento con refuerzo positivo:</strong> Responden bien al entrenamiento con premios y palabras de aliento. Son perros inteligentes, aunque a veces pueden ser un poco tercos, por lo que la paciencia y la constancia son clave.</li>
+                            </ul>
+                                <h2>7. Cuidado dental y de uñas</h2>
+                            <ul>
+                                <li><strong>Cepillado de dientes:</strong> Los pugs tienden a acumular sarro y son propensos a problemas dentales. Cepillarles los dientes regularmente o darles juguetes masticables específicos para limpiar sus dientes es muy importante.</li>
+                                <li><strong>Recorte de uñas:</strong> Mantener las uñas cortas es importante para evitar molestias al caminar. Recorta sus uñas cada pocas semanas, o cuando escuches que hacen ruido al caminar.</li>
+                            </ul>
+                                <h2>8. Atención emocional y convivencia</h2>
+                            <ul>
+                                <li><strong>Tiempo en familia:</strong> Los pugs son perros muy apegados a sus dueños y necesitan tiempo de calidad en su compañía. No deben dejarse solos por largos periodos, ya que pueden desarrollar ansiedad por separación.</li>
+                                <li><strong>Ambiente seguro y cómodo:</strong> Asegúrate de que tengan una cama cómoda y un lugar fresco para descansar, ya que se cansan fácilmente y necesitan un lugar donde puedan recuperarse.</li>
+                            </ul>
+                                <h2>9. Identificación y seguridad</h2>
+                            <ul>
+                                <li><strong>Collar y placa de identificación:</strong> Asegúrate de que siempre tengan una identificación con su nombre y número de contacto en caso de que se extravíen.</li>
+                                <li><strong>Microchip:</strong> Un microchip puede ser útil para identificarlos y encontrarlos en caso de pérdida.</li>
+                            </ul>
+                            </ul>
+                     </div>
+                     
+                     <!-- Labrador Retriever -->
+                    <div class="raza-container">
+                        <h3>Labrador Retriever</h3>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/1200px-Labrador_Retriever_%281210559%29.jpg" alt="Labrador">
+                        <button onclick="toggleInfo('infoLabrador')">Ver más</button>
+                        <div class="info" id="infoLabrador" style="display:none;">
+                            <h3>Edad</h3>
+    <p>Esperanza de vida entre 10 y 12 años.</p>
+
+    <h2>Alimentación de calidad</h2>
+    <p>
+        Los Labradores necesitan una dieta equilibrada con:
+    </p>
     <ul>
-        <li><strong>Cantidad y frecuencia:</strong> Los chihuahuas tienen un estómago pequeño, así que es mejor alimentarlos en pequeñas porciones dos o tres veces al día.</li>
-        <li><strong>Calidad:</strong> Busca comida de alta calidad diseñada para perros de raza pequeña; evita los alimentos con subproductos o rellenos como maíz y soja.</li>
-        <li><strong>Evita la obesidad:</strong> Tienden a ganar peso fácilmente, lo cual puede ser perjudicial para sus articulaciones y su salud en general. Controla las porciones y evita darle demasiados premios.</li>
+        <li>Proteínas de alta calidad como pollo o pescado</li>
+        <li>Carbohidratos de bajo índice glucémico como arroz integral y batata</li>
+        <li>Grasas saludables como aceite de pescado para mejorar el brillo del pelaje y la salud de las articulaciones</li>
     </ul>
 
-    <h2>2. Ejercicio</h2>
+    <h2>Educación animal</h2>
+    <p>Son perros muy inteligentes y fáciles de entrenar. Responden bien al refuerzo positivo y disfrutan de actividades como:</p>
     <ul>
-        <li><strong>Rutina diaria:</strong> A pesar de su tamaño, necesitan ejercicio diario para mantenerse saludables y quemar energía. Un paseo corto de 15-30 minutos y sesiones de juego en casa son suficientes.</li>
-        <li><strong>Estimulación mental:</strong> Los chihuahuas son perros inteligentes que se benefician de juguetes interactivos y juegos de entrenamiento.</li>
+        <li>Búsqueda de objetos</li>
+        <li>Agility</li>
+        <li>Obediencia</li>
     </ul>
 
-    <h2>3. Temperatura y clima</h2>
+    <h2>Higiene</h2>
+    <p>Requieren:</p>
     <ul>
-        <li><strong>Sensibles al frío:</strong> Tienen poco tejido adiposo y se enfrían fácilmente, especialmente en climas fríos o húmedos. Usa suéteres o abrigos en invierno y mantén su cama en un lugar cálido.</li>
-        <li><strong>Calor extremo:</strong> También son sensibles al calor, así que evita exponerlos al sol directo o paseos en las horas más calurosas.</li>
+        <li>Cepillado regular (al menos dos veces por semana) debido a su capa doble, especialmente durante las épocas de muda</li>
+        <li>Limpieza de oídos</li>
+        <li>Baños mensuales o cuando sea necesario</li>
     </ul>
 
-    <h2>4. Salud</h2>
+    <h2>Paseo y actividad física</h2>
+    <p>Necesitan entre 1 y 2 horas diarias de ejercicio. Disfrutan de:</p>
     <ul>
-        <li><strong>Dentición:</strong> Los chihuahuas son propensos a problemas dentales, por lo que es importante cepillarles los dientes regularmente y usar premios que ayuden a mantener su salud bucal.</li>
-        <li><strong>Luxación de rótula:</strong> La dislocación de la rótula es común en esta raza. Evita que salten de alturas altas o se lesionen.</li>
-        <li><strong>Problemas cardíacos y colapso traqueal:</strong> Estas son condiciones comunes en la raza; mantener un peso saludable y hacer revisiones veterinarias es esencial.</li>
+        <li>Nadar</li>
+        <li>Correr</li>
+        <li>Jugar al aire libre</li>
+    </ul>
+    <p>Estas actividades les ayudan a evitar la obesidad.</p>
+
+    <h2>Atención y cuidados veterinarios</h2>
+    <p>Es importante realizar:</p>
+    <ul>
+        <li>Chequeos regulares para controlar la displasia de cadera y codo</li>
+        <li>Vigilancia constante de su peso, ya que son propensos a la obesidad, que puede derivar en problemas cardíacos y articulares</li>
+    </ul>
+                            </ul>
+                            </div>
+                     </div>
+
+<!-- Pastor Aleman -->
+<div class="raza-container">
+    <h3>Pastor Aleman</h3>
+    <img src="https://www.zooplus.es/magazine/wp-content/uploads/2019/03/deutscher-sch%C3%A4ferhund.jpg" alt="Pastor">
+    <button onclick="toggleInfo('infoPastor')">Ver más</button>
+    <div class="info" id="infoPastor" style="display:none;">
+        <h3>Edad</h3>
+    <p>Esperanza de vida entre 9 y 13 años.</p>
+
+    <h2>Alimentación de calidad</h2>
+    <p>Necesitan alimentos ricos en:</p>
+    <ul>
+        <li>Proteínas: carne de res, pollo, pavo</li>
+        <li>Grasas moderadas</li>
+    </ul>
+    <p>También son útiles los suplementos de:</p>
+    <ul>
+        <li>Glucosamina y condroitina para la salud de las articulaciones</li>
+        <li>Ácidos grasos omega-3 para la piel y el pelaje</li>
     </ul>
 
-    <h2>5. Cuidado del pelaje</h2>
+    <h2>Educación animal</h2>
+    <p>Son perros muy inteligentes y requieren estimulación mental constante. Actividades ideales:</p>
     <ul>
-        <li><strong>Cepillado regular:</strong> Tanto los chihuahuas de pelo corto como los de pelo largo se benefician de un cepillado semanal para mantener su pelaje en buen estado y reducir el desprendimiento.</li>
-        <li><strong>Baños:</strong> Un baño mensual o cada seis semanas es suficiente; evita bañarlos en exceso, ya que puede resecar su piel.</li>
+        <li>Entrenamientos de obediencia</li>
+        <li>Trabajo especializado como detección o protección</li>
     </ul>
+    <p>Requieren firmeza y constancia en su entrenamiento.</p>
 
-    <h2>6. Socialización y comportamiento</h2>
+    <h2>Higiene</h2>
+    <p>Requieren:</p>
     <ul>
-        <li><strong>Socialización temprana:</strong> Los chihuahuas pueden ser territoriales y protectores. La socialización con otros perros y personas desde temprana edad ayudará a reducir la agresividad y la ansiedad.</li>
-        <li><strong>Tendencia a ladrar:</strong> Son propensos a ladrar, especialmente si están aburridos o sienten que necesitan proteger a sus dueños. Entrenarlos para manejar esta conducta es importante.</li>
-        <li><strong>Independencia:</strong> Aunque son perros pequeños, los chihuahuas pueden tener un carácter independiente, pero también suelen apegarse mucho a sus dueños.</li>
+        <li>Cepillado frecuente, al menos 2-3 veces por semana, debido a su capa doble</li>
+        <li>Cuidado de la higiene dental</li>
     </ul>
+    <p>Son perros que mudan mucho pelo, por lo que es necesario un mantenimiento constante.</p>
 
-    <h2>7. Cuidado general y visitas al veterinario</h2>
+    <h2>Paseo y actividad física</h2>
+    <p>Al menos 2 horas de ejercicio intenso al día. Actividades recomendadas:</p>
     <ul>
-        <li><strong>Visitas regulares al veterinario:</strong> Las vacunas, las desparasitaciones y chequeos anuales son necesarios para prevenir enfermedades comunes.</li>
-        <li><strong>Microchip y collar con identificación:</strong> Al ser una raza pequeña y ágil, es importante que siempre tengan una identificación en caso de que se extravíen.</li>
-                    </ul>
-                </div>
-            </div>
+        <li>Largas caminatas</li>
+        <li>Correr</li>
+        <li>Trabajos físicos</li>
+    </ul>
+    <p>Estas actividades los mantienen en buena forma y reducen la ansiedad.</p>
 
-            <!-- Pitbull -->
-            <div class="raza-container">
-                <h3>Pitbull</h3>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjnrnHlb3SKpu7aXJT10694foEcNv-UDF94JdahiYFy1EZLRlhdmsQPBRZ&s=10" alt="Pitbull">
-                <button onclick="toggleInfo('infoPitbull')">Ver más</button>
-                <div class="info" id="infoPitbull" style="display:none;">
-                    <h3>Pitbull</h3>
-                    <ul>
-                        <li>Ejercicio diario: Son muy activos, así que requieren actividad intensa (juegos, correr).</li>
-                        <li>Entrenamiento y socialización temprana: Para evitar comportamientos agresivos, necesitan entrenamiento constante y contacto con otros perros y personas.</li>
-                        <li>Alimentación de alta calidad: Necesitan una dieta rica en proteínas y equilibrada.</li>
-                        <li>Cuidado de la piel: Son propensos a problemas cutáneos, por lo que hay que revisar su piel frecuentemente.</li>
-                        <li>Espacio y estimulación mental: Son perros fuertes y requieren espacio para moverse y actividades para mantener su mente activa.</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Mestizos -->
-            <div class="raza-container">
-                <h3>Mestizos</h3>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFaSmqyeuRTXHcPwqeR44Vs9MTP21ycPf3AZ8bnF2S9lbF8qoeHBK49lTy&s=10" alt="Mestizos">
-                <button onclick="toggleInfo('infoMestizos')">Ver más</button>
-                <div class="info" id="infoMestizos" style="display:none;">
-                    <h3>Mestizos</h3>
-                    <ul>
-                        <li>Ejercicio adecuado: Las necesidades varían, pero en general requieren paseos y actividad.</li>
-                        <li>Atención veterinaria regular: Al ser una mezcla de razas, necesitan chequeos para prevenir problemas de salud.</li>
-                        <li>Dieta equilibrada: No tienen requerimientos específicos, pero una dieta balanceada es clave.</li>
-                        <li>Cepillado: Dependiendo de su tipo de pelo, algunos mestizos necesitan cepillado frecuente.</li>
-                        <li>Socialización: Como con cualquier perro, la socialización es importante para un buen comportamiento.</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Pugs -->
-            <div class="raza-container">
-                <h3>Pugs</h3>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRojpyJMeCWU1e_DRy9_M1yhZCJeu_YToMDioXroLgKXhC1g62Q2mtn3CU&s=10" alt="Pugs">
-                <button onclick="toggleInfo('infoPugs')">Ver más</button>
-                <div class="info" id="infoPugs" style="display:none;">
-                    <h3>Pugs</h3>
-                    <ul>
-                        <li>Ejercicio moderado: Evita el ejercicio en climas calurosos, ya que tienen problemas respiratorios.</li>
-                        <li>Cuidado de pliegues: Limpia sus pliegues faciales regularmente para evitar infecciones.</li>
-                        <li>Dieta controlada: Son propensos a la obesidad, así que limita las porciones.</li>
-                        <li>Ambiente fresco: Necesitan vivir en ambientes frescos y ventilados por su sensibilidad al calor.</li>
-                        <li>Cuidado de ojos: Sus ojos saltones son delicados, así que revisa cualquier signo de irritación o lesión.</li>
-                    </ul>
-                </div>
-             </div>
-             
-             <!-- Schnauzer -->
-            <div class="raza-container">
-                <h3>Schnauzer</h3>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaX_jEL6Nn2-nYWGOD-SKtgc_W-6Oqdmg9-1VL_TTjglwvXNBz5RrD5b2O&s=10" alt="Schnauzer">
-                <button onclick="toggleInfo('infoSchnauzer')">Ver más</button>
-                <div class="info" id="infoSchnauzer" style="display:none;">
-                    <h3>Schnauzer</h3>
-                    <ul>
-                        <li>Cepillado frecuente: Su pelaje necesita cepillado regular para evitar enredos.</li>
-                        <li>Ejercicio diario: Son enérgicos y disfrutan de paseos y juegos diarios.</li>
-                        <li>Cuidado de oídos: Limpia sus oídos frecuentemente para prevenir infecciones.</li>
-                        <li>Corte de pelo: Requieren un corte de pelo cada 4-6 semanas para mantener su apariencia.</li>
-                        <li>Entrenamiento constante: Son inteligentes y pueden aburrirse, así que necesitan estimulación mental y física.</li>
-                    </ul>
-                </div>
-             </div>
-             <br>
-             </section>
-             </ul>
-           </div>
-    </div>
-
-    <!-- Modal -->
-    <div id="modal" class="modal" onclick="closeModal()">
-        <div class="modal-content" id="modalContent">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
+    <h2>Atención y cuidados veterinarios</h2>
+    <p>Es importante realizar:</p>
+    <ul>
+        <li>Revisiones regulares para monitorear la displasia de cadera</li>
+        <li>Control de problemas cardíacos y torsión gástrica</li>
+        <li>Control de peso para prevenir problemas articulares</li>
+    </ul>
+        </ul>
         </div>
-    </div>
-<button id="scrollTop" onclick="scrollToTop()">Subir ↑</button>
+ </div>
+
+                     <!-- Schnauzer -->
+                    <div class="raza-container">
+                        <h3>Schnauzer</h3>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaX_jEL6Nn2-nYWGOD-SKtgc_W-6Oqdmg9-1VL_TTjglwvXNBz5RrD5b2O&s=10" alt="Schnauzer">
+                        <button onclick="toggleInfo('infoSchnauzer')">Ver más</button>
+                        <div class="info" id="infoSchnauzer" style="display:none;">
+                            <p>Los schnauzer son una raza versátil y enérgica, conocidos por su inteligencia, lealtad y carácter juguetón. Existen tres tamaños de schnauzer (miniatura, estándar y gigante), y aunque sus necesidades varían un poco en función de su tamaño, comparten ciertos aspectos importantes de cuidado. Aquí tienes una guía completa para el cuidado de los schnauzer:</p>
+
+                            <h2>1. Alimentación</h2>
+                            <ul>
+                                <li><strong>Dieta equilibrada:</strong> Los schnauzer requieren una alimentación de calidad, con proteínas como base y grasas saludables para mantener su energía. Para evitar problemas digestivos, es ideal un alimento específico para su tamaño (miniatura, estándar o gigante).</li>
+                                <li><strong>Cantidad y control de peso:</strong> Ajusta las porciones a su tamaño y actividad. Los schnauzer miniatura, en particular, tienden a tener problemas de sobrepeso, así que vigila su ingesta de alimentos y evita las golosinas excesivas.</li>
+                                <li><strong>Evitar problemas pancreáticos:</strong> Esta raza puede ser propensa a la pancreatitis, por lo que es mejor evitar alimentos grasos y controlar las calorías.</li>
+                            </ul>
+                        
+                            <h2>2. Ejercicio y actividad</h2>
+                            <ul>
+                                <li><strong>Ejercicio diario:</strong> Los schnauzer, especialmente los estándares y gigantes, son activos y necesitan al menos una hora de ejercicio diario, incluyendo paseos y tiempo de juego. Los schnauzer miniatura también disfrutan el ejercicio, aunque se adaptan mejor a un estilo de vida más relajado.</li>
+                                <li><strong>Estimulación mental:</strong> Son perros inteligentes que se benefician de juguetes interactivos, juegos de entrenamiento y actividades como el agility o el rastreo, para evitar el aburrimiento y mantener su mente activa.</li>
+                            </ul>
+                        
+                            <h2>3. Cuidado del pelaje</h2>
+                            <ul>
+                                <li><strong>Cepillado regular:</strong> Los schnauzer tienen un pelaje de doble capa que requiere cepillado varias veces por semana para evitar nudos y mantener su pelaje saludable. En los miniatura, un cepillado dos o tres veces por semana suele ser suficiente.</li>
+                                <li><strong>Stripping o corte de pelaje:</strong> Los schnauzer suelen necesitar un “stripping” (técnica de depilación manual) o corte especializado cada 6-8 semanas para mantener su pelaje en buen estado.</li>
+                                <li><strong>Baños ocasionales:</strong> Bañarlos cada 6-8 semanas es ideal; usa champú específico para perros que no reseque su piel.</li>
+                            </ul>
+                        
+                            <h2>4. Cuidado de la barba y patas</h2>
+                            <ul>
+                                <li><strong>Higiene de la barba:</strong> Limpia la barba regularmente para evitar malos olores y acumulación de bacterias.</li>
+                                <li><strong>Limpieza de patas:</strong> Revisa y limpia las patas después de los paseos para evitar suciedad y nudos.</li>
+                            </ul>
+                        
+                            <h2>5. Salud y visitas al veterinario</h2>
+                            <ul>
+                                <li><strong>Chequeos regulares:</strong> Visita al veterinario al menos una vez al año para mantener sus vacunas, desparasitaciones y chequeos generales.</li>
+                                <li><strong>Problemas específicos de la raza:</strong> Los schnauzer pueden ser propensos a la pancreatitis, enfermedades hepáticas, problemas dentales e hipotiroidismo.</li>
+                                <li><strong>Cuidado ocular:</strong> Presta atención a posibles cataratas o atrofia progresiva de retina.</li>
+                            </ul>
+                        
+                            <h2>6. Socialización y entrenamiento</h2>
+                            <ul>
+                                <li><strong>Socialización temprana:</strong> Es importante para evitar comportamientos territoriales.</li>
+                                <li><strong>Entrenamiento positivo:</strong> Usa refuerzo positivo y paciencia para entrenarlos debido a su inteligencia y posible testarudez.</li>
+                            </ul>
+                        
+                            <h2>7. Cuidado dental y de uñas</h2>
+                            <ul>
+                                <li><strong>Cuidado dental:</strong> Cepilla sus dientes regularmente y usa juguetes masticables para evitar sarro y problemas dentales.</li>
+                                <li><strong>Recorte de uñas:</strong> Mantén sus uñas cortas para evitar molestias al caminar.</li>
+                            </ul>
+                        
+                            <h2>8. Atención emocional y convivencia</h2>
+                            <ul>
+                                <li><strong>Tiempo en familia:</strong> Dedica tiempo de calidad para fortalecer el vínculo.</li>
+                                <li><strong>Evitar la ansiedad por separación:</strong> Proporcionales estímulos y juguetes si pasan tiempo solos.</li>
+                            </ul>
+                        
+                            <h2>9. Identificación y seguridad</h2>
+                            <ul>
+                                <li><strong>Collar y placa de identificación:</strong> Incluye su nombre y número de contacto.</li>
+                                <li><strong>Microchip:</strong> Una medida adicional de seguridad para facilitar su identificación.</li>
+                            </ul>
+                                        </div>
+                    </div>
+                    </div>
+            </div>
+
+    <!-- Botón para volver arriba -->
+    <button class="scroll-top-btn" onclick="scrollToTop()">Volver al principio</button>
+
+    <!-- Botón para redirigir -->
+    <a href="file:///C:/Users/alex/Desktop/petbloom%202.0/pagina%20principal.html" target="_blank" class="external-link-btn">Visita PetBloom</a>
+
     <footer>
-        <p>&copy;     2024 PetBloom. Todos los derechos reservados.</p>
+        <p>&copy; 2024 PetBloom. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
