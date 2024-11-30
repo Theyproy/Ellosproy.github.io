@@ -15,18 +15,25 @@
     
         header {
     margin: 20px auto;
-    max-width: 700px;
+    max-width: 700px; /* Valor predeterminado para laptops */
     max-height: 700px;
     margin-bottom: 20px;
-    border: 10px solid #97b3ff;
+    border: 10px solid #a4eaff;
     padding: 0 auto;
     box-sizing: border-box;
     text-align: center;
     transition: transform 0.4s ease, border-color 0.4s ease;
 }
 
+/* Estilo específico para dispositivos móviles */
+@media (max-width: 600px) {
+    header {
+        max-width: 370px;
+    }
+}
+
 header:hover {
-    border-color: #3269ff;
+    border-color: #15d4e2;
 }
 
 header img {
@@ -43,7 +50,7 @@ header img {
             width: 380px;
             height: 400px;
             margin: 10px;
-            border: 10px solid #a8fafa;
+            border: 10px solid #b8ffff;
             padding: 5px;
             box-sizing: border-box;
             display: block;
@@ -55,8 +62,8 @@ header img {
         }
     
         .img-large-1:hover, .img-large-2:hover {
-            transform: scale(1.1);
-            border-color: hsl(192, 100%, 59%);
+            transform: scale(1.0);
+            border-color: hsl(192, 98%, 52%);
         }
     
         nav {
@@ -66,21 +73,21 @@ header img {
         }
     
         .nav-section {
-            background-color: #56b5ec;
-            margin-bottom: 10px;
+            background-color: #fd9d20;
+            margin-bottom: 12px;
             padding: 12px;
             color: white;
-            border: 5px solid #040808;
+            border: 5px solid  #000000;
             border-radius: 50px;
             transition: border-color 0.3s ease;
         }
     
         .nav-section:hover {
-            border-color: rgb(238, 151, 255);
+            border-color: rgb(0, 0, 0);
         }
     
         .button {
-            background-color: #01e1f1;
+            background-color: #ff9956;
             border: none;
             color: white;
             padding: 10px 20px;
@@ -98,7 +105,7 @@ header img {
         }
     
         footer {
-            background-color: #000000;
+            background-color: hsl(175, 67%, 96%);
             color: #ffffff;
             text-align: center;
             padding: 20px;
@@ -113,7 +120,7 @@ header img {
     
         @keyframes colorChange {
             0% { color: #000000; }
-            50% { color: #e45f5f; }
+            50% { color: #eb4747; }
             100% { color: #000000; }
         }
     
@@ -147,7 +154,7 @@ header img {
         }
     
         .modal-content {
-            background-color: #f0f0f0;
+            background-color: #fff9f9;
             padding: 20px;
             border-radius: 10px;
             width: 80%; /* Ancho adaptable */
@@ -159,7 +166,7 @@ header img {
         }
     
         .modal-button {
-            background-color: #01e1f1;
+            background-color: #ff9853;
             color: white;
             border: none;
             padding: 10px;
@@ -257,9 +264,9 @@ function redirectToPage() {
     const species = document.getElementById("modal").getAttribute("data-species");
     // Redirigir según la especie seleccionada
     if (species === "gatos") {
-        window.location.href = "gatos.html"; // URL para gatos
+        window.location.href = "file:///C:/Users/alex/Desktop/Petbloom/gatos.html"; // URL para gatos
     } else if (species === "Perros") {
-        window.location.href = "perros.html"; // URL para perros
+        window.location.href = "file:///C:/Users/alex/Desktop/petbloom%202.0/perros.html"; // URL para perros
     }
 }
     </script>
