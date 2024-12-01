@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cuidado de Gatos</title>
+    <title>Cuidado de Perros y Gatos</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -67,61 +67,83 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            transition: all 0.3s ease;
         }
 
-        .info {
+        .raza-container button:hover {
+            background-color: #4a8ca0;
+            transform: scale(1.05);
+        }
+
+        .raza-container button:active {
+            transform: scale(0.95);
+        }
+
+        .raza-container .info {
             display: none;
             margin-top: 10px;
-            animation: fadeIn 0.5s ease-out;
+        }
+
+        .raza-container .info ul {
+            padding-left: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #5a9db9;
+            color: white;
+        }
+
+        .scroll-top-btn, .external-link-btn {
+            display: block;
+            width: 80%;
+            max-width: 300px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #5a9db9;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .scroll-top-btn:hover, .external-link-btn:hover {
+            background-color: #4a8ca0;
+            transform: scale(1.05);
+        }
+
+        .scroll-top-btn:active, .external-link-btn:active {
+            transform: scale(0.95);
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease forwards;
         }
 
         @keyframes fadeIn {
             from {
                 opacity: 0;
+                transform: translateY(-20px);
             }
             to {
                 opacity: 1;
+                transform: translateY(0);
             }
-        }
-
-        #scrollTop {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            padding: 10px 20px;
-            background-color: #5a9db9;
-            color: white;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
-            font-size: 16px;
-            display: none; /* Oculto inicialmente */
-        }
-
-        #scrollTop:hover {
-            background-color: #4a8ca6;
         }
     </style>
     <script>
         function toggleInfo(id) {
             const info = document.getElementById(id);
-            if (info.style.display === 'none' || info.style.display === '') {
-                info.style.display = 'block';
+            if (info.style.display === "none" || !info.style.display) {
+                info.style.display = "block";
+                info.classList.add("fade-in");
             } else {
-                info.style.display = 'none';
+                info.style.display = "none";
+                info.classList.remove("fade-in");
             }
         }
-
-        // Mostrar el botón al desplazarse
-        window.addEventListener('scroll', function () {
-            const scrollTopBtn = document.getElementById('scrollTop');
-            if (window.scrollY > 200) {
-                scrollTopBtn.style.display = 'block';
-            } else {
-                scrollTopBtn.style.display = 'none';
-            }
-        });
 
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -145,31 +167,335 @@
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJ4eFR3DPMQ3iwmbVIb6eXR0QqLccL0pqfxVqPlUsSqxRKjgTXu-9r2js&s=10" alt="Siames">
                 <button onclick="toggleInfo('infoSiames')">Ver más</button>
                 <div class="info" id="infoSiames" style="display:none;">
-                    <h3>Siamés</h3>
-                    <ul>
-                        <li>Atención y compañía: Son sociables y disfrutan de la interacción, así que dedica tiempo para jugar con ellos.</li>
-                        <li>Estimulación mental: Son inteligentes y necesitan juguetes o juegos que desafíen su mente.</li>
-                        <li>Ejercicio regular: Disfrutan de saltar y trepar, así que un árbol para gatos es ideal.</li>
-                        <li>Revisión dental: Son propensos a problemas dentales, así que considera cepillar sus dientes o usar juguetes dentales.</li>
-                      <li>Chequeos veterinarios: Suelen ser saludables, pero es importante monitorear su salud con visitas regulares.</li>
-                    </ul>
+                    <p>El gato Siamesa es una raza originaria de Tailandia (antes conocida como Siam) y es una de las razas más antiguas y reconocidas del mundo. Aquí te presento información sobre esta fascinante raza:</p>
+
+    <h2>Características físicas</h2>
+    <ul>
+        <li>Pelaje corto y liso</li>
+        <li>Color: crema, beige, chocolate, azul o lila</li>
+        <li>Ojos azules brillantes</li>
+        <li>Orejas triangulares y puntiagudas</li>
+        <li>Cuerpo esbelto y muscular</li>
+        <li>Peso: 3-5 kg</li>
+        <li>Longevidad: 12-15 años</li>
+    </ul>
+
+    <h2>Personalidad</h2>
+    <ul>
+        <li>Inteligente y curioso</li>
+        <li>Juguetón y activo</li>
+        <li>Amigable y afectuoso</li>
+        <li>Vocal y comunicativo</li>
+        <li>Necesita atención y interacción constante</li>
+    </ul>
+
+    <h2>Cuidados y salud</h2>
+    <ul>
+        <li>Requiere una dieta equilibrada y rica en proteínas</li>
+        <li>Necesita ejercicio regular y juego</li>
+        <li>Puede ser propenso a enfermedades renales y cardíacas</li>
+        <li>Requiere cuidado dental regular</li>
+        <li>Puede ser sensible al estrés y cambios ambientales</li>
+    </ul>
+
+    <h2>Historia</h2>
+    <ul>
+        <li>Originario de Tailandia en el siglo XIV</li>
+        <li>Fue considerado un gato sagrado y símbolo de buena suerte</li>
+        <li>Llegó a Occidente en el siglo XIX y se popularizó como raza de exposición</li>
+    </ul>
+
+    <h2>Tipos de Siamesa</h2>
+    <ul>
+        <li><strong>Siamesa clásica:</strong> color crema con extremidades oscuras</li>
+        <li><strong>Siamesa moderna:</strong> variedad de colores y patrones</li>
+        <li><strong>Siamesa tradicional:</strong> pelaje más largo y cuerpo más robusto</li>
+    </ul>
+
+    <h2>Consejos para dueños de Siamesa</h2>
+    <ul>
+        <li>Proporciona atención y juego constante</li>
+        <li>Mantén un entorno estimulante y variado</li>
+        <li>Asegura una dieta equilibrada y saludable</li>
+        <li>Realiza chequeos veterinarios regulares</li>
+        <li>Aprovecha su inteligencia y capacidad de aprendizaje</li>
+    </ul>
                 </div>
             </div>
             
+            <!-- Bombay -->
+            <div class="raza-container">
+                <h3>Bombay</h3>
+                <img src="https://nfnatcane.es/blog/wp-content/uploads/2020/02/gato-Bombay-observando-desde-el-jard%C3%ADn.jpg" alt="Bombay">
+                <button onclick="toggleInfo('infoBombay')">Ver más</button>
+                <div class="info" id="infoBombay" style="display:none;">
+                    <p>El gato Bombay es una raza particular y muy querida, conocida por su pelaje negro brillante, similar al de una pantera en miniatura, y sus ojos de color dorado o cobre.</p>
+
+    <h2>Alimentación</h2>
+    <ul>
+        <li>
+            <strong>Proteínas de Calidad:</strong> 
+            Los Bombay, al igual que todos los gatos, son carnívoros obligados y necesitan una dieta rica en proteínas. Opta por alimento específico para gatos de alta calidad, que tenga carne como ingrediente principal y bajo en carbohidratos.
+        </li>
+        <li>
+            <strong>Control de Porciones:</strong> 
+            Esta raza tiende a aumentar de peso si no se controla su ingesta, por lo que es importante medir las porciones y alimentar en horarios específicos. Puedes dividir su comida en dos o tres porciones diarias.
+        </li>
+        <li>
+            <strong>Hidratación:</strong> 
+            Los gatos Bombay pueden ser un poco reacios a beber agua. Considera darle alimento húmedo junto con el alimento seco y colocar varias fuentes de agua en casa, o usar una fuente de agua para gatos que estimule su curiosidad.
+        </li>
+    </ul>
+
+    <h2>Ejercicio</h2>
+    <ul>
+        <li>
+            <strong>Espacios Verticales:</strong> 
+            Los Bombay disfrutan trepar y observar desde arriba, así que un árbol rascador o estantes elevados pueden ser una gran adición a su entorno. Esto les permite explorar su espacio y mantenerse activos.
+        </li>
+        <li>
+            <strong>Actividades y Enriquecimiento:</strong>
+            <ul>
+                <li><strong>Rascadores:</strong> Los Bombay necesitan tener un lugar donde puedan afilar sus uñas y liberar tensión. Coloca rascadores en lugares estratégicos para evitar que se interesen en tus muebles.</li>
+                <li><strong>Juguetes Interactivos y Rompecabezas:</strong> Son una raza inteligente, así que disfrutan de desafíos mentales. Los juguetes interactivos que ofrecen recompensas, como dispensadores de premios o rompecabezas para gatos, mantendrán su mente activa.</li>
+                <li><strong>Estímulos Sensoriales:</strong> Juguetes con catnip (hierba gatera) pueden ser una excelente forma de mantenerlos entretenidos. Además, los Bombay suelen responder bien a sonidos como los de juguetes chirriantes o campanillas, ya que despiertan su curiosidad.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Cuidado General</h2>
+    <ul>
+        <li>
+            <strong>Cepillado:</strong> 
+            Aunque los Bombay tienen el pelaje corto y sedoso, es recomendable cepillarlos una vez a la semana para mantener el brillo y eliminar el pelo muerto. Esto también ayuda a reducir la formación de bolas de pelo.
+        </li>
+        <li>
+            <strong>Higiene y Cuidado de los Ojos y Orejas:</strong>
+            Esta raza puede tener una secreción ocular ligera, así que limpia sus ojos suavemente con un paño húmedo si es necesario. También revisa sus orejas y límpialas con regularidad.
+        </li>
+        <li>
+            <strong>Salud Bucal:</strong> 
+            Acostúmbralo desde joven a un cepillado dental semanal, ya que los gatos suelen acumular sarro, lo cual puede derivar en problemas dentales.
+        </li>
+        <li>
+            <strong>Revisiones Veterinarias:</strong> 
+            Lleva a tu Bombay al veterinario al menos una vez al año para chequeos generales, y asegúrate de que esté al día con sus vacunas y desparasitaciones.
+        </li>
+        <li>
+            <strong>Esterilización:</strong> 
+            Si no planeas tener crías, es recomendable esterilizar a tu gato para evitar problemas de conducta y de salud a futuro.
+        </li>
+    </ul>
+                </div>
+            </div>
+
+            <!-- Doméstico Mexicano -->
+            <div class="raza-container">
+                <h3>Doméstico Mexicano</h3>
+                <img src="https://i0.wp.com/tradicionescultura.com.mx/wp-content/uploads/2022/08/el-gato-mexicano-1.jpg?fit=1200%2C582&ssl=1" alt="Mexicano">
+                <button onclick="toggleInfo('infoMexicano')">Ver más</button>
+                <div class="info" id="infoMexicano" style="display:none;">
+                    <p>
+                        El gato doméstico mexicano, conocido simplemente como gato criollo en México, es uno de los gatos más comunes en los hogares y calles del país. Estos gatos suelen ser mestizos y presentan una gran variedad de colores y patrones, resultado de la mezcla de diferentes razas a lo largo de los años. Suelen ser robustos y muy adaptables al entorno, pero también requieren ciertos cuidados para asegurar su bienestar.
+                    </p>
+                
+                    <h2>Alimentación</h2>
+                    <ul>
+                        <li>
+                            <strong>Dieta Balanceada:</strong> 
+                            Como todos los gatos, los gatos criollos son carnívoros obligados y necesitan una dieta rica en proteínas. Lo ideal es alimentarlos con comida específica para gatos de buena calidad que contenga proteínas de origen animal y pocos cereales. Puedes optar por comida seca o húmeda o combinar ambas.
+                        </li>
+                        <li>
+                            <strong>Porciones Adecuadas:</strong> 
+                            Algunos gatos criollos pueden tener tendencia a ganar peso, especialmente si están esterilizados o si pasan mucho tiempo dentro de casa. Divide su comida en dos o tres porciones al día y controla su ingesta calórica según su peso y nivel de actividad.
+                        </li>
+                        <li>
+                            <strong>Hidratación:</strong> 
+                            Los gatos suelen beber poca agua, así que es útil dejarle varias fuentes de agua fresca o usar una fuente para gatos. El alimento húmedo también ayuda a mantenerlo hidratado.
+                        </li>
+                        <li>
+                            <strong>Dieta según la Edad:</strong> 
+                            Los gatitos criollos necesitan una dieta más rica en energía y proteínas, mientras que los gatos adultos o mayores necesitan una alimentación moderada en grasas para evitar problemas de salud.
+                        </li>
+                    </ul>
+                
+                    <h2>Ejercicio</h2>
+                    <ul>
+                        <li>
+                            <strong>Juguetes para Estimularlo:</strong> 
+                            Los gatos criollos suelen ser curiosos y activos, por lo que es bueno tener juguetes interactivos, como ratones de peluche, pelotas o plumeros que estimulen su instinto de caza.
+                        </li>
+                        <li>
+                            <strong>Espacios para Escalar:</strong> 
+                            A los gatos les encanta explorar en altura, así que asegúrate de tener rascadores o estantes que le permitan moverse en vertical. Los árboles rascadores son ideales para esto.
+                        </li>
+                    </ul>
+                
+                    <h3>Actividades y Enriquecimiento</h3>
+                    <ul>
+                        <li>
+                            <strong>Estimulación con Olores:</strong> 
+                            Algunos gatos criollos responden bien a la hierba gatera (catnip) o a juguetes perfumados. Esto puede servir para estimular su olfato y brindarle momentos de relajación y alegría.
+                        </li>
+                    </ul>
+                
+                    <h2>Cuidado General</h2>
+                    <ul>
+                        <li>
+                            <strong>Cepillado Regular:</strong> 
+                            Aunque los gatos criollos tienen el pelaje corto en la mayoría de los casos, cepillarlos regularmente ayuda a reducir las bolas de pelo y a mantener el pelaje saludable.
+                        </li>
+                        <li>
+                            <strong>Visitas al Veterinario:</strong> 
+                            Es importante que tu gato tenga revisiones anuales y esté al día con sus vacunas y desparasitaciones. Esto es crucial, sobre todo si pasa tiempo al aire libre.
+                        </li>
+                        <li>
+                            <strong>Desparasitación y Control de Pulgas:</strong> 
+                            Aplica desparasitantes internos y productos antipulgas regularmente, siguiendo las recomendaciones del veterinario.
+                        </li>
+                        <li>
+                            <strong>Esterilización:</strong> 
+                            La esterilización es aconsejable para evitar problemas de salud, conductas territoriales, y sobrepoblación felina. Además, muchos gatos criollos esterilizados tienden a estar más tranquilos y saludables.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Americano Pelo corto -->
+            <div class="raza-container">
+                <h3>American Shorthair</h3>
+                <img src="https://soydegatos.com/wp-content/uploads/2022/10/el-gato-American-Shorthair.jpg" alt="Americano">
+                <button onclick="toggleInfo('infoAmericano')">Ver más</button>
+                <div class="info" id="infoAmericano" style="display:none;">
+                    <p>
+                        El gato American Shorthair o de Pelo Corto es una de las razas más populares en Estados Unidos y el mundo. Conocido por su pelaje corto, cuerpo musculoso y temperamento equilibrado, este gato es resistente, adaptable y un excelente compañero. Su carácter amigable y fácil de llevar lo hace ideal tanto para hogares tranquilos como para familias activas.
+                    </p>
+                
+                    <h2>Alimentación</h2>
+                    <ul>
+                        <li>
+                            <strong>Alimentación de Calidad:</strong> 
+                            Como todos los gatos, el Americano de Pelo Corto necesita una dieta rica en proteínas de alta calidad, con carne o pescado como ingrediente principal. Evita alimentos con demasiados cereales, que no son necesarios para su dieta.
+                        </li>
+                        <li>
+                            <strong>Porciones y Control de Peso:</strong> 
+                            Aunque es una raza activa, puede tender a ganar peso si no se controla la alimentación. Divide su comida en dos o tres raciones diarias y ajusta la cantidad de acuerdo con su peso y nivel de actividad.
+                        </li>
+                    </ul>
+                
+                    <h2>Ejercicio</h2>
+                    <ul>
+                        <li>
+                            <strong>Juguetes que Estimulen su Energía:</strong> 
+                            Los gatos Americanos de Pelo Corto son juguetones y disfrutan de juguetes como pelotas, plumeros y ratones de peluche que les permitan ejercitarse y satisfacer su instinto de caza.
+                        </li>
+                        <li>
+                            <strong>Rascadores y Espacios para Trepar:</strong> 
+                            Un árbol rascador o repisas para trepar son ideales, ya que esta raza es muy curiosa y disfruta explorar en altura.
+                        </li>
+                    </ul>
+                
+                    <h3>Actividades y Enriquecimiento</h3>
+                    <ul>
+                        <li>
+                            <strong>Rascadores:</strong> 
+                            Coloca rascadores en distintos lugares de la casa para que pueda afilar sus uñas y liberar tensión, además de evitar que arañe muebles.
+                        </li>
+                        <li>
+                            <strong>Juego Social:</strong> 
+                            Los Americanos de Pelo Corto son sociables y disfrutan de la interacción con sus dueños. Dedica tiempo a jugar y convivir con él, ya que esto fortalece el vínculo y ayuda a evitar el aburrimiento.
+                        </li>
+                        <li>
+                            <strong>Estímulos Olfativos:</strong> 
+                            Juguetes con catnip o hierba gatera pueden ser una excelente forma de mantenerlo entretenido y ofrecerle un estímulo adicional.
+                        </li>
+                    </ul>
+                
+                    <h2>Cuidado General</h2>
+                    <ul>
+                        <li>
+                            <strong>Cepillado Regular:</strong> 
+                            Aunque tienen el pelaje corto y fácil de mantener, cepillarlos una vez a la semana ayuda a reducir el pelo suelto y a mantener el pelaje brillante.
+                        </li>
+                        <li>
+                            <strong>Revisión de Ojos y Orejas:</strong> 
+                            Revisa sus ojos y orejas periódicamente para detectar y limpiar posibles acumulaciones de suciedad, evitando así infecciones.
+                        </li>
+                        <li>
+                            <strong>Higiene Dental:</strong> 
+                            Intenta cepillar sus dientes semanalmente para prevenir el sarro y problemas dentales, pues los gatos suelen acumular placa en los dientes.
+                        </li>
+                        <li>
+                            <strong>Visitas al Veterinario:</strong> 
+                            Lleva a tu gato a revisiones veterinarias anuales para chequeos de salud y actualizaciones de vacunas y desparasitaciones.
+                        </li>
+                        <li>
+                            <strong>Esterilización:</strong> 
+                            Si no planeas criar, la esterilización es recomendable para evitar comportamientos territoriales y problemas de salud en el futuro.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
             <!-- Persa -->
             <div class="raza-container">
                 <h3>Persa</h3>
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxkNb1Of6gKvs6UPcTLkFvrBVPvt8iF_RiX6j49mX4JC_75wScYlzfl5cp&s=10" alt="Persa">
                 <button onclick="toggleInfo('infoPersa')">Ver más</button>
                 <div class="info" id="infoPersa" style="display:none;">
-                    <h3>Persa</h3>
-                    <ul>
-                        <li>Cepillado diario: Su pelaje largo necesita cepillado diario para evitar nudos y bolas de pelo.</li>
-                        <li>Limpieza ocular: Tienen ojos grandes y son propensos a lagrimeo, por lo que se recomienda limpiar alrededor de sus ojos.</li>
-                        <li>Ambiente fresco y tranquilo: Son tranquilos y prefieren un ambiente calmado; evita el calor excesivo.</li>
-                        <li>Dieta controlada: Debido a su nivel de actividad bajo, controla su alimentación para evitar la obesidad.</li>
-                      <li>Chequeos regulares: Tienen predisposición a problemas respiratorios y renales, por lo que las visitas veterinarias son importantes.</li>
-                    </ul>
+                    <p>El gato Persa es una de las razas más antiguas y reconocidas del mundo. Aquí te presento información sobre esta majestuosa raza:</p>
+
+    <h2>Características físicas</h2>
+    <ul>
+        <li>Pelaje largo y denso</li>
+        <li>Color: blanco, crema, gris, azul, chocolate, etc.</li>
+        <li>Ojos grandes y redondos, de color azul o cobre</li>
+        <li>Orejas pequeñas y redondas</li>
+        <li>Cuerpo robusto y musculoso</li>
+        <li>Peso: 4-6 kg</li>
+        <li>Longevidad: 12-17 años</li>
+    </ul>
+
+    <h2>Personalidad</h2>
+    <ul>
+        <li>Calmado y tranquilo</li>
+        <li>Gentil y afectuoso</li>
+        <li>Independiente y reservado</li>
+        <li>No es muy juguetón</li>
+        <li>Necesita un entorno pacífico y estable</li>
+    </ul>
+
+    <h2>Cuidados y salud</h2>
+    <ul>
+        <li>Requiere un pelaje regular y cuidadoso</li>
+        <li>Puede ser propenso a problemas respiratorios y oculares</li>
+        <li>Necesita una dieta equilibrada y baja en grasas</li>
+        <li>Requiere ejercicio moderado y juego suave</li>
+        <li>Puede ser sensible al estrés y cambios ambientales</li>
+    </ul>
+
+    <h2>Historia</h2>
+    <ul>
+        <li>Originario de Persia (actual Irán) en el siglo XVI</li>
+        <li>Fue considerado un gato real y símbolo de lujo</li>
+        <li>Llegó a Occidente en el siglo XIX y se popularizó como raza de exposición</li>
+    </ul>
+
+    <h2>Tipos de Persa</h2>
+    <ul>
+        <li><strong>Persa clásica:</strong> pelaje largo y denso, color blanco o crema</li>
+        <li><strong>Persa moderna:</strong> variedad de colores y patrones</li>
+        <li><strong>Persa exótica:</strong> cruzado con otras razas para crear un pelaje más corto y denso</li>
+    </ul>
+
+    <h2>Consejos para dueños de Persa</h2>
+    <ul>
+        <li>Proporciona un entorno tranquilo y estable</li>
+        <li>Cuida regularmente el pelaje para evitar enredos</li>
+        <li>Asegura una dieta equilibrada y saludable</li>
+        <li>Realiza chequeos veterinarios regulares</li>
+        <li>Aprovecha su naturaleza calmada y afectuosa</li>
+    </ul>
                 </div>
             </div>
             
@@ -179,31 +505,240 @@
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZnO_qbLbNCOgd_M-orWm5m_9kzyUfdhIxoQ&usqp=CAU" alt="Maine">
                 <button onclick="toggleInfo('infoMaine')">Ver más</button>
                 <div class="info" id="infoMaine" style="display:none;">
-                    <h3>Maine Coon</h3>
-                    <ul>
-                        <li>Cepillado semanal: Tienen un pelaje espeso que necesita cepillado semanal para evitar enredos.</li>
-                        <li>Ejercicio y espacio: Son activos y necesitan espacio para moverse y trepar, así como juegos interactivos.</li>
-                        <li>Dieta rica en proteínas: Su tamaño grande requiere una dieta balanceada y rica en proteínas.</li>
-                        <li>Revisión dental y ocular: Son propensos a problemas dentales y oculares, así que revisa su boca y ojos regularmente.</li>
-                      <li>Chequeos cardíacos: Esta raza puede desarrollar problemas cardíacos, por lo que es recomendable hacer revisiones veterinarias frecuentes.</li>
-                    </ul>
+                    <p>El Maine Coon es una raza de gato originaria de América del Norte, conocida por su tamaño impresionante, pelaje grueso y personalidad amigable. Aquí te presento información sobre esta fascinante raza:</p>
+
+    <h2>Características físicas</h2>
+    <ul>
+        <li><strong>Tamaño:</strong> machos hasta 25 kg, hembras hasta 15 kg</li>
+        <li><strong>Pelaje:</strong> grueso, largo y suave, con variedad de colores y patrones</li>
+        <li><strong>Ojos:</strong> grandes, redondos y expresivos, de color verde, azul o dorado</li>
+        <li><strong>Orejas:</strong> grandes y puntiagudas</li>
+        <li><strong>Cuerpo:</strong> musculoso y robusto</li>
+    </ul>
+
+    <h2>Personalidad</h2>
+    <ul>
+        <li>Amigable y afectuoso</li>
+        <li>Juguetón y curioso</li>
+        <li>Inteligente y trainable</li>
+        <li>Leal y protector con su familia</li>
+        <li>Tolerante con niños y otros animales</li>
+    </ul>
+
+    <h2>Cuidados y salud</h2>
+    <ul>
+        <li>Requiere una dieta equilibrada y rica en proteínas</li>
+        <li>Necesita ejercicio regular y juego</li>
+        <li>Puede ser propenso a enfermedades cardíacas y renales</li>
+        <li>Requiere cuidado dental regular</li>
+        <li>Puede ser sensible al estrés y cambios ambientales</li>
+    </ul>
+
+    <h2>Historia</h2>
+    <ul>
+        <li>Originario de Maine, EE. UU. en el siglo XIX</li>
+        <li>Descendiente de gatos europeos y americanos</li>
+        <li>Reconocido como raza oficial en 1976</li>
+    </ul>
+
+    <h2>Tipos de Maine Coon</h2>
+    <ul>
+        <li><strong>Maine Coon clásico:</strong> pelaje largo y denso, color sólido o tabby</li>
+        <li><strong>Maine Coon moderno:</strong> variedad de colores y patrones</li>
+        <li><strong>Maine Coon gigante:</strong> tamaño excepcionalmente grande</li>
+    </ul>
+
+    <h2>Consejos para dueños de Maine Coon</h2>
+    <ul>
+        <li>Proporciona un entorno espacioso y estimulante</li>
+        <li>Asegura una dieta equilibrada y saludable</li>
+        <li>Realiza chequeos veterinarios regulares</li>
+        <li>Aprovecha su inteligencia y capacidad de aprendizaje</li>
+        <li>Disfruta de su compañía y afecto</li>
+    </ul>
                 </div>
             </div>
             
+            <!-- American Curl -->
+            <div class="raza-container">
+                <h3>American Curl</h3>
+                <img src="https://cdn0.expertoanimal.com/es/razas/4/9/1/gato-curl-americano_194_0_orig.jpg" alt="Curl">
+                <button onclick="toggleInfo('infoCurl')">Ver más</button>
+                <div class="info" id="infoCurl" style="display:none;">
+                    <p>
+                        El American Curl es una raza de gato conocida por sus distintivas orejas curvadas hacia atrás y su carácter amigable.
+                    </p>
+                
+                    <h2>1. Salud</h2>
+                    <ul>
+                        <li>
+                            <strong>Orejas:</strong> Dado que sus orejas tienen esa forma tan particular, es importante revisarlas regularmente. Son propensas a acumular suciedad y cera, lo que podría llevar a infecciones. Limpiar sus orejas suavemente una vez al mes es ideal.
+                        </li>
+                        <li>
+                            <strong>Chequeos veterinarios:</strong> Llevarlo al veterinario de manera regular ayuda a detectar problemas comunes en esta raza. Las vacunas y las desparasitaciones deben estar al día.
+                        </li>
+                        <li>
+                            <strong>Ejercicio y peso:</strong> Mantener su peso adecuado es clave. Son gatos activos, así que necesitan ejercicio diario para evitar el sobrepeso y otros problemas de salud.
+                        </li>
+                    </ul>
+                
+                    <h2>2. Comida</h2>
+                    <ul>
+                        <li>
+                            <strong>Alimentación balanceada:</strong> Opta por un alimento de alta calidad, rico en proteínas y bajo en carbohidratos, ya que los gatos son carnívoros obligados. Elige un pienso específico para gatos de interiores si vive dentro de casa.
+                        </li>
+                        <li>
+                            <strong>Comida húmeda:</strong> Además de pienso, es recomendable incluir comida húmeda en su dieta para una buena hidratación, especialmente si no bebe mucha agua.
+                        </li>
+                    </ul>
+                
+                    <h2>3. Higiene</h2>
+                    <ul>
+                        <li>
+                            <strong>Cepillado:</strong> Su pelaje es de mantenimiento bajo o moderado, pero se recomienda cepillarlo una vez a la semana para eliminar el pelo muerto y reducir bolas de pelo.
+                        </li>
+                        <li>
+                            <strong>Uñas:</strong> Cortar sus uñas cada dos semanas evita que se enganchen en superficies o dañen los muebles.
+                        </li>
+                    </ul>
+                
+                    <h2>4. Ambiente y estimulación</h2>
+                    <ul>
+                        <li>
+                            <strong>Juguetes y rascadores:</strong> Los American Curl son curiosos y enérgicos, así que necesitan juguetes y rascadores para estimularse mental y físicamente. También disfrutan de espacios donde puedan trepar.
+                        </li>
+                        <li>
+                            <strong>Socialización:</strong> Esta raza es amigable y disfruta de la compañía humana. Asegúrate de dedicarle tiempo de calidad, ya que son gatos que suelen crear un fuerte vínculo con sus dueños.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Europeo de pelo corto -->
+            <div class="raza-container">
+                <h3>Europeo de Pelo Corto</h3>
+                <img src="https://images.ctfassets.net/denf86kkcx7r/4IPlg4Qazd4sFRuCUHIJ1T/f6c71da7eec727babcd554d843a528b8/gatocomuneuropeo-97" alt="Europeo">
+                <button onclick="toggleInfo('infoEuropeo')">Ver más</button>
+                <div class="info" id="infoEuropeo" style="display:none;">
+                    <p>
+                        Los gatos europeos de pelo corto son una raza fuerte y saludable, pero, como cualquier gato, necesitan ciertos cuidados para vivir plenamente.
+                    </p>
+                
+                    <h2>1. Alimentación</h2>
+                    <ul>
+                        <li>
+                            <strong>Comida balanceada:</strong> Los gatos europeos necesitan una dieta rica en proteínas y baja en carbohidratos. Elige alimentos de alta calidad que incluyan carne como ingrediente principal.
+                        </li>
+                        <li>
+                            <strong>Cantidad y frecuencia:</strong> Lo ideal es que coman en pequeñas cantidades a lo largo del día, ya que los gatos suelen ser comedores frecuentes. Consulta con un veterinario para ajustar la cantidad según su peso, edad y nivel de actividad.
+                        </li>
+                        <li>
+                            <strong>Hidratación:</strong> Asegúrate de que siempre tengan agua fresca disponible. Puedes considerar la comida húmeda, ya que aporta hidratación adicional.
+                        </li>
+                    </ul>
+                
+                    <h2>2. Cuidado del pelo</h2>
+                    <ul>
+                        <li>
+                            <strong>Cepillado regular:</strong> Aunque tienen el pelo corto, es útil cepillarlos una o dos veces por semana para reducir el pelo suelto y evitar que lo traguen al asearse.
+                        </li>
+                        <li>
+                            <strong>Baños:</strong> No es necesario bañarlos con frecuencia, ya que se limpian solos. Solo bañalos si realmente es necesario (si se ensucian mucho o tienen alguna alergia).
+                        </li>
+                    </ul>
+                
+                    <h2>3. Salud</h2>
+                    <ul>
+                        <li>
+                            <strong>Vacunas y desparasitaciones:</strong> Lleva un control de las vacunas anuales y desparasitaciones internas y externas.
+                        </li>
+                        <li>
+                            <strong>Visitas al veterinario:</strong> Llévalo al menos una vez al año para un chequeo general. Los problemas de salud más comunes pueden incluir problemas renales o dentales en la edad avanzada.
+                        </li>
+                        <li>
+                            <strong>Cuidado dental:</strong> Ayuda a mantener sus dientes limpios. Puedes usar premios dentales o cepillos específicos para gatos.
+                        </li>
+                    </ul>
+                
+                    <h2>4. Ejercicio y entretenimiento</h2>
+                    <ul>
+                        <li>
+                            <strong>Rascadores y juguetes:</strong> Los gatos europeos son activos, por lo que disfrutarán de rascadores, juguetes interactivos y espacios elevados para trepar.
+                        </li>
+                        <li>
+                            <strong>Tiempo de juego:</strong> Dedica al menos 15-20 minutos al día a jugar con ellos. Esto les ayuda a mantener un peso saludable y reducir el estrés.
+                        </li>
+                    </ul>
+                
+                    <h2>5. Cuidado emocional</h2>
+                    <ul>
+                        <li>
+                            <strong>Socialización:</strong> Aunque suelen ser independientes, necesitan afecto y tiempo de calidad con su familia humana.
+                        </li>
+                        <li>
+                            <strong>Espacio propio:</strong> Proporciónales un lugar tranquilo donde puedan descansar sin ser molestados.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
             <!-- Bengala -->
             <div class="raza-container">
                 <h3>Bengala</h3>
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS37TUDrpb3-Sl6CwBZqsXfP1c_EkMU0VHfE4lX6ZWmk3ohh2bd7nMke55I&s=10" alt="Bengala">
                 <button onclick="toggleInfo('infoBengala')">Ver más</button>
                 <div class="info" id="infoBengala" style="display:none;">
-                    <h3>Bengala</h3>
-                    <ul>
-                        <li>Ejercicio intenso: Son muy activos y necesitan bastante ejercicio, como juegos de caza y rascadores altos.</li>
-                        <li>Estimulación mental: Al ser inteligentes, disfrutan de juegos de rompecabezas y juguetes interactivos.</li>
-                        <li>Cepillado ocasional: Su pelaje corto requiere poco cepillado, pero ayuda a mantenerlo brillante.</li>
-                        <li>Socialización: Disfrutan de la compañía humana, así que interactúa con ellos a diario.</li>
-                      <li>Chequeos regulares: Son propensos a problemas gastrointestinales y cardíacos, por lo que las visitas al veterinario son importantes.</li>
-                    </ul>
+                    <p>El gato Bengala es una raza híbrida originada del cruce entre un gato doméstico y un leopardo asiático. Aquí te presento información sobre esta fascinante raza:</p>
+
+    <h2>Características físicas</h2>
+    <ul>
+        <li><strong>Tamaño:</strong> machos hasta 10 kg, hembras hasta 6 kg</li>
+        <li><strong>Pelaje:</strong> corto, suave y brillante, con patrones de manchas o rayas</li>
+        <li><strong>Ojos:</strong> grandes, redondos y expresivos, de color verde, azul o dorado</li>
+        <li><strong>Orejas:</strong> grandes y puntiagudas</li>
+        <li><strong>Cuerpo:</strong> musculoso y atlético</li>
+    </ul>
+
+    <h2>Personalidad</h2>
+    <ul>
+        <li>Energético y juguetón</li>
+        <li>Curioso y aventurero</li>
+        <li>Inteligente y trainable</li>
+        <li>Leal y afectuoso con su familia</li>
+        <li>Puede ser vocal y exigente</li>
+    </ul>
+
+    <h2>Cuidados y salud</h2>
+    <ul>
+        <li>Requiere una dieta equilibrada y rica en proteínas</li>
+        <li>Necesita ejercicio regular y juego</li>
+        <li>Puede ser propenso a enfermedades cardíacas y renales</li>
+        <li>Requiere cuidado dental regular</li>
+        <li>Puede ser sensible al estrés y cambios ambientales</li>
+    </ul>
+
+    <h2>Historia</h2>
+    <ul>
+        <li>Originado en los años 60 en EE. UU.</li>
+        <li>Reconocido como raza oficial en 1986</li>
+        <li>Cruzado con leopardo asiático para crear una raza doméstica con características selváticas</li>
+    </ul>
+
+    <h2>Tipos de Bengal</h2>
+    <ul>
+        <li><strong>Bengal F1:</strong> cruce directo con leopardo asiático</li>
+        <li><strong>Bengal F2:</strong> cruce con un Bengal F1</li>
+        <li><strong>Bengal F3:</strong> cruce con un Bengal F2</li>
+    </ul>
+
+    <h2>Consejos para dueños de Bengal</h2>
+    <ul>
+        <li>Proporciona un entorno estimulante y activo</li>
+        <li>Asegura una dieta equilibrada y saludable</li>
+        <li>Realiza chequeos veterinarios regulares</li>
+        <li>Aprovecha su inteligencia y capacidad de aprendizaje</li>
+        <li>Disfruta de su energía y compañía</li>
+    </ul>
                 </div>
             </div>
             
@@ -213,28 +748,70 @@
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtS03nDanUypNbezW2-j1pSYwOcSxYfZ-6jJWP_qXR5b1WUKAl2FmTUtuN&s=10" alt="Sphynx">
                 <button onclick="toggleInfo('infoSphynx')">Ver más</button>
                 <div class="info" id="infoSphynx" style="display:none;">
-                    <h3>Sphynx</h3>
-                    <ul>
-                        <li>Baños regulares: Su piel sin pelo acumula aceites, así que necesitan baños frecuentes para evitar infecciones.</li>
-                        <li>Cuidado de orejas: Limpia sus orejas con regularidad, ya que acumulan cera fácilmente.</li>
-                        <li>Abrigo en climas fríos: Al no tener pelaje, son sensibles al frío y necesitan ropa o mantas en invierno.</li>
-                        <li>Protección solar: En climas cálidos, evita exponerlos al sol directo para prevenir quemaduras.</li>
-                      <li>Chequeos regulares: Son propensos a problemas cardíacos, así que las revisiones frecuentes son esenciales.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </div>
+                    <p>El gato Sphynx es una raza conocida por su falta de pelaje y su apariencia única. Aquí te presento información sobre esta fascinante raza:</p>
 
-    <!-- Modal -->
-    <div id="modal" class="modal" onclick="closeModal()">
-        <div class="modal-content" id="modalContent">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-        </div>
-    </div>
-<button id="scrollTop" onclick="scrollToTop()">Subir ↑</button>
+                    <h2>Características físicas</h2>
+                    <ul>
+                        <li><strong>Pelaje:</strong> sin pelaje o con pelaje muy fino</li>
+                        <li><strong>Piel:</strong> suave y tersa</li>
+                        <li><strong>Ojos:</strong> grandes y redondos, de color verde, azul o dorado</li>
+                        <li><strong>Orejas:</strong> grandes y puntiagudas</li>
+                        <li><strong>Cuerpo:</strong> musculoso y atlético</li>
+                        <li><strong>Tamaño:</strong> machos hasta 5 kg, hembras hasta 4 kg</li>
+                    </ul>
+                
+                    <h2>Personalidad</h2>
+                    <ul>
+                        <li>Amigable y afectuoso</li>
+                        <li>Juguetón y curioso</li>
+                        <li>Inteligente y trainable</li>
+                        <li>Leal y protector con su familia</li>
+                        <li>Necesita atención constante</li>
+                    </ul>
+                
+                    <h2>Cuidados y salud</h2>
+                    <ul>
+                        <li>Requiere baños regulares para mantener la piel limpia</li>
+                        <li>Necesita protección solar para evitar quemaduras</li>
+                        <li>Puede ser propenso a problemas de piel y alergias</li>
+                        <li>Requiere cuidado dental regular</li>
+                        <li>Necesita un entorno cálido y acogedor</li>
+                    </ul>
+                
+                    <h2>Historia</h2>
+                    <ul>
+                        <li>Originado en Canadá en 1966</li>
+                        <li>Reconocido como raza oficial en 2002</li>
+                        <li>Cruzado con gatos domésticos para crear una raza sin pelaje</li>
+                    </ul>
+                
+                    <h2>Tipos de Sphynx</h2>
+                    <ul>
+                        <li><strong>Sphynx canadiense:</strong> raza original</li>
+                        <li><strong>Sphynx europeo:</strong> variedad con características ligeramente diferentes</li>
+                    </ul>
+                
+                    <h2>Consejos para dueños de Sphynx</h2>
+                    <ul>
+                        <li>Proporciona un entorno cálido y acogedor</li>
+                        <li>Asegura una dieta equilibrada y saludable</li>
+                        <li>Realiza chequeos veterinarios regulares</li>
+                        <li>Aprovecha su inteligencia y capacidad de aprendizaje</li>
+                        <li>Disfruta de su compañía y afecto</li>
+                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+    <!-- Botón para volver arriba -->
+    <button class="scroll-top-btn" onclick="scrollToTop()">Volver al principio</button>
+
+    <!-- Botón para redirigir -->
+    <a href="https://www.google.com" target="_blank" class="external-link-btn">Visita PetBloom</a>
+
     <footer>
-        <p>&copy;     2024 PetBloom. Todos los derechos reservados.</p>
+        <p>&copy; 2024 PetBloom. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
